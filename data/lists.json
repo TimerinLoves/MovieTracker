@@ -297,6 +297,23 @@
       ],
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:26:41.331Z"
+    },
+    {
+      "id": 51497,
+      "mediaType": "movie",
+      "title": "Fast Five",
+      "year": "2011",
+      "overview": "Former cop Brian O'Conner partners with ex-con Dom Toretto on the opposite side of the law. Since Brian and Mia Toretto broke Dom out of custody, they've blown across many borders to elude authorities. Now backed into a corner in Rio de Janeiro, they must pull one last job in order to gain their freedom.",
+      "posterPath": "/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg",
+      "backdropPath": "/c1Q8jLoaruQ9m5lCrVlXOaJJtu7.jpg",
+      "voteAverage": 7.245,
+      "genreIds": [
+        28,
+        53,
+        80
+      ],
+      "addedBy": "Timerin",
+      "addedAt": "2026-08-20T21:27:15.002Z"
     }
   ],
   "currentlyWatching": [],
