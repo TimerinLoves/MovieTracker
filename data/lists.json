@@ -319,6 +319,44 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:33:09.404Z"
+    },
+    {
+      "id": 809,
+      "mediaType": "movie",
+      "title": "Shrek 2",
+      "year": "2004",
+      "overview": "Happily ever after never seemed so far far away when a trip to meet the in-laws turns into a hilariously twisted adventure for Shrek and Fiona. With the help of ever-faithful Donkey, Shrek takes on the potion-brewing Fairy Godmother, pompous Prince Charming, and infamous ogre-killer Puss In Boots.",
+      "posterPath": "/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg",
+      "backdropPath": "/8ohobj5lAIbl5XWw11FywS3IRrS.jpg",
+      "voteAverage": 7.327,
+      "genreIds": [
+        16,
+        35,
+        10751,
+        14,
+        10749
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:33:13.327Z"
+    },
+    {
+      "id": 10192,
+      "mediaType": "movie",
+      "title": "Shrek Forever After",
+      "year": "2010",
+      "overview": "A midlife-crisis burdened Shrek, longing for the days when he felt like a real ogre, makes a pact with magic deal-maker Rumpelstiltskin. But when he's duped and sent to a twisted version of Far Far Away—where Rumpelstiltskin is king, ogres are hunted, and he and Fiona have never met—he sets out to restore his world and reclaim his true love.",
+      "posterPath": "/6HrfPZtKcGmX2tUWW3cnciZTaSD.jpg",
+      "backdropPath": "/uzzTystB8lL0mRDII5Sfs5HxgkI.jpg",
+      "voteAverage": 6.413,
+      "genreIds": [
+        35,
+        12,
+        14,
+        16,
+        10751
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:33:19.541Z"
     }
   ],
   "currentlyWatching": [],
