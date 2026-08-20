@@ -32,19 +32,19 @@
     }
   },
   "movie-9615": {
-    "slot0": {
+    "slot1": {
       "scores": {
         "story": 3,
         "acting": 4,
         "visuals": 4,
         "music": 5,
         "rewatchability": 4,
-        "pacing": 2,
-        "emotionalImpact": 4
+        "pacing": 4,
+        "emotionalImpact": 3
       },
-      "average": 3.7,
-      "ratedAt": "2026-08-20T21:36:55.908Z",
-      "ratedByName": "Timerin"
+      "average": 3.9,
+      "ratedAt": "2026-08-20T21:37:26.947Z",
+      "ratedByName": "Sushi"
     }
   }
 }
