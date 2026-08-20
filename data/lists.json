@@ -756,6 +756,22 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:09:32.166Z"
+    },
+    {
+      "id": 845404,
+      "mediaType": "movie",
+      "title": "Tyler Perry's A Madea Homecoming",
+      "year": "2022",
+      "overview": "Madea's back - hallelujer! And she's not putting up with any nonsense as family drama erupts at her great-grandson's college graduation celebration.",
+      "posterPath": "/fWJXNc0Q0qIXU8O8hcUmH0iCYzu.jpg",
+      "backdropPath": "/7hzK0D7NGTy1MDJkWL9IQKrTmfq.jpg",
+      "voteAverage": 6.736,
+      "genreIds": [
+        35,
+        18
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:09:37.041Z"
     }
   ],
   "currentlyWatching": [],
