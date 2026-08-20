@@ -91,6 +91,21 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T20:58:35.302Z"
+    },
+    {
+      "id": 4258,
+      "mediaType": "movie",
+      "title": "Scary Movie 5",
+      "year": "2013",
+      "overview": "Home with their newly-formed family, happy parents Dan and Jody are haunted by sinister, paranormal activities. Determined to expel the insidious force, they install security cameras and discover their family is being stalked by an evil dead demon.",
+      "posterPath": "/vBqLLxE6GaAPhO6v9EFvFbLZ7Ap.jpg",
+      "backdropPath": "/2eW8VlLXjUq4OKk8SYf5KTr91Kv.jpg",
+      "voteAverage": 4.788,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T20:58:40.375Z"
     }
   ],
   "currentlyWatching": [],
