@@ -416,6 +416,22 @@
       ],
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:28:13.651Z"
+    },
+    {
+      "id": 550,
+      "mediaType": "movie",
+      "title": "Fight Club",
+      "year": "1999",
+      "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+      "posterPath": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+      "backdropPath": "/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+      "voteAverage": 8.437,
+      "genreIds": [
+        18,
+        53
+      ],
+      "addedBy": "Timerin",
+      "addedAt": "2026-08-20T21:30:10.117Z"
     }
   ],
   "currentlyWatching": [],
