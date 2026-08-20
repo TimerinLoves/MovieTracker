@@ -724,6 +724,38 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:09:23.719Z"
+    },
+    {
+      "id": 736860,
+      "mediaType": "movie",
+      "title": "Tyler Perry's Madea's Farewell - The Play",
+      "year": "2020",
+      "overview": "In Tyler Perry's final performance as Madea, the beloved matriarch will grace the stage to help her family navigate their greatest challenge yet: each other. Madea’s great-grandson graduates from law school and the entire family gathering to celebrate the occasion. However, chaos ensues as some unexpected folks show up and Madea morphs into a life coach. It's sure to be a turbulent time but one filled with fun, laughter and perhaps even some tears.",
+      "posterPath": "/V074srO6USbw8wAa2nD4xeE9cn.jpg",
+      "backdropPath": "/AcdHp2euFiEZ93tDCW2Evlgy1D0.jpg",
+      "voteAverage": 7.8,
+      "genreIds": [
+        18,
+        35,
+        10770
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:09:25.637Z"
+    },
+    {
+      "id": 165649,
+      "mediaType": "movie",
+      "title": "Tyler Perry's Madea Gets A Job - The Play",
+      "year": "2012",
+      "overview": "Tyler Perry's new musical stage play starring the infamous Mabel Simmons or \"Madea\" as her fans know her. When a judge orders Madea to do 20 hours of community service at a local retirement home the residents and staff are not ready for Madea's brand of \"the truth\", but all is well that ends well when Madea helps the residence of Easy Rest Retirement Home realize the importance of family, love and forgiveness.",
+      "posterPath": "/jpVDJgxiH5icjLXDlg6nszcrifU.jpg",
+      "backdropPath": "/zolPuWjqILuKjVh7uoZJyxkjFA2.jpg",
+      "voteAverage": 7.2,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:09:32.166Z"
     }
   ],
   "currentlyWatching": [],
