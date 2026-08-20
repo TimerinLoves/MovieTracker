@@ -519,6 +519,24 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:46:11.035Z"
+    },
+    {
+      "id": 9607,
+      "mediaType": "movie",
+      "title": "Super Mario Bros.",
+      "year": "1993",
+      "overview": "Mario and Luigi, plumbers from Brooklyn, find themselves in an alternate universe where evolved dinosaurs live in hi-tech squalor. They're the only hope to save our universe from invasion by the dino dictator, Koopa.",
+      "posterPath": "/yt5bbMfKpg1nRr4k5edxs7tPK2m.jpg",
+      "backdropPath": "/1GGfWFp9hp4RUHRHxd505z9rVFa.jpg",
+      "voteAverage": 4.5,
+      "genreIds": [
+        12,
+        14,
+        35,
+        10751
+      ],
+      "addedBy": "Timerin",
+      "addedAt": "2026-08-20T21:47:01.730Z"
     }
   ],
   "currentlyWatching": [],
