@@ -1,1 +1,18 @@
-{}
+{
+  "movie-9799": {
+    "slot0": {
+      "scores": {
+        "story": 3,
+        "acting": 3,
+        "visuals": 4,
+        "music": 3,
+        "rewatchability": 1,
+        "pacing": 3,
+        "emotionalImpact": 3
+      },
+      "average": 2.9,
+      "ratedAt": "2026-08-20T21:35:07.583Z",
+      "ratedByName": "Timerin"
+    }
+  }
+}
