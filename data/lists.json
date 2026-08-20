@@ -500,6 +500,25 @@
       ],
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:42:20.399Z"
+    },
+    {
+      "id": 502356,
+      "mediaType": "movie",
+      "title": "The Super Mario Bros. Movie",
+      "year": "2023",
+      "overview": "While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.",
+      "posterPath": "/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+      "backdropPath": "/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+      "voteAverage": 7.596,
+      "genreIds": [
+        10751,
+        35,
+        12,
+        14,
+        16
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:46:11.035Z"
     }
   ],
   "currentlyWatching": [],
