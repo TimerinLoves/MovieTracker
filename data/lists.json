@@ -61,6 +61,36 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T20:58:31.253Z"
+    },
+    {
+      "id": 4248,
+      "mediaType": "movie",
+      "title": "Scary Movie 2",
+      "year": "2001",
+      "overview": "A group of students visit a mansion called \"Hell House,\" and murderous high jinks ensue.",
+      "posterPath": "/7Eb1JWK0Cb0rbfsYjwfc9g0PbQH.jpg",
+      "backdropPath": "/cjSB3ZjaMpaa9oHFyeYha3KG0mp.jpg",
+      "voteAverage": 5.844,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T20:58:33.218Z"
+    },
+    {
+      "id": 4257,
+      "mediaType": "movie",
+      "title": "Scary Movie 4",
+      "year": "2006",
+      "overview": "Cindy finds out the house she lives in is haunted by a little boy and goes on a quest to find out who killed him and why. Also, Alien \"Tr-iPods\" are invading the world and she has to uncover the secret in order to stop them.",
+      "posterPath": "/dEwlu8S0z1AibuX1weLwUyiRWFl.jpg",
+      "backdropPath": "/pSNwe7G9bESwlCBVurlwRs7fMZU.jpg",
+      "voteAverage": 5.497,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T20:58:35.302Z"
     }
   ],
   "currentlyWatching": [],
