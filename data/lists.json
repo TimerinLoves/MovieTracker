@@ -357,6 +357,25 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:33:19.541Z"
+    },
+    {
+      "id": 810,
+      "mediaType": "movie",
+      "title": "Shrek the Third",
+      "year": "2007",
+      "overview": "After the King of Far Far Away dies, Shrek and Fiona are to succede. However, Shrek wants to return to his cozy swamp and live in peace and quiet, so when he finds out there is another heir to the throne, he and Donkey set off to bring him back to rule the kingdom.",
+      "posterPath": "/n4SexGGQzI26E269tfpa80MZaGV.jpg",
+      "backdropPath": "/wvXxKpFGXvQJRB0nvvfURhRD3C0.jpg",
+      "voteAverage": 6.314,
+      "genreIds": [
+        14,
+        12,
+        16,
+        35,
+        10751
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:33:26.292Z"
     }
   ],
   "currentlyWatching": [],
