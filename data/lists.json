@@ -1,6 +1,5 @@
 {
-  "wantToWatch": [],
-  "currentlyWatching": [
+  "wantToWatch": [
     {
       "id": 27581,
       "mediaType": "movie",
@@ -19,5 +18,6 @@
       "addedAt": "2026-08-20T20:29:46.117Z"
     }
   ],
+  "currentlyWatching": [],
   "watched": []
 }
