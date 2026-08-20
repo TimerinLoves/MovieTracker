@@ -201,6 +201,22 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:18:48.179Z"
+    },
+    {
+      "id": 9286,
+      "mediaType": "movie",
+      "title": "Final Destination 3",
+      "year": "2006",
+      "overview": "High school senior Wendy's premonition of a deadly rollercoaster ride saves her life and a lucky few, but not from death itself — which seeks out those who escaped their fate.",
+      "posterPath": "/p7ARuNKUGPGvkBiDtIDvAzYzonX.jpg",
+      "backdropPath": "/nSV1NIAK0Sp5dM1oiobtqbJ8Jrv.jpg",
+      "voteAverage": 6.156,
+      "genreIds": [
+        27,
+        9648
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:18:49.891Z"
     }
   ],
   "currentlyWatching": [],
