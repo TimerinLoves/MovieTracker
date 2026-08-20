@@ -806,6 +806,43 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:14:12.614Z"
+    },
+    {
+      "id": 34584,
+      "mediaType": "movie",
+      "title": "The NeverEnding Story",
+      "year": "1984",
+      "overview": "While hiding from bullies in his school's attic, a young boy discovers the extraordinary land of Fantasia, through a magical book called The Neverending Story. The book tells the tale of Atreyu, a young warrior who, with the help of a luck dragon named Falkor, must save Fantasia from the destruction of The Nothing.",
+      "posterPath": "/ddYCa91iDXfJCxaqSYzwi2fjfnl.jpg",
+      "backdropPath": "/rKmOe5pb5a6P1HmQAzpRw20gORp.jpg",
+      "voteAverage": 7.226,
+      "genreIds": [
+        12,
+        14,
+        10751
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:16:52.817Z"
+    },
+    {
+      "id": 10986,
+      "mediaType": "tv",
+      "title": "The NeverEnding Story",
+      "year": "1995",
+      "overview": "The animated adventures of Bastian Balthazar Bux in the enchanted storybook world of Fantasia.",
+      "posterPath": "/9hJwz9QzpntihSMtmTKYcqzkauS.jpg",
+      "backdropPath": "/1TqdB5c4bmA35OHG0yvOmnLBLgb.jpg",
+      "voteAverage": 5.75,
+      "genreIds": [
+        16,
+        10759,
+        10751,
+        10765,
+        10762,
+        18
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:16:54.918Z"
     }
   ],
   "currentlyWatching": [],
