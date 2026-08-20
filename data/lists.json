@@ -46,6 +46,21 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T20:58:26.188Z"
+    },
+    {
+      "id": 4256,
+      "mediaType": "movie",
+      "title": "Scary Movie 3",
+      "year": "2003",
+      "overview": "News anchorwoman Cindy Campbell has to investigate mysterious crop circles and killing video tapes, and help the President stop an alien invasion in the process.",
+      "posterPath": "/8dLsax5KSwlCY5uWXETKjud5k6U.jpg",
+      "backdropPath": "/nF74HKjNe7X54XMcIc7ulK5InxR.jpg",
+      "voteAverage": 5.977,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T20:58:31.253Z"
     }
   ],
   "currentlyWatching": [],
