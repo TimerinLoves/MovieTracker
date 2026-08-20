@@ -45,7 +45,7 @@ export default function DetailModal({ item, onClose, onRate, onShowBreakdown }: 
   const myRating = session ? movieRating?.[`slot${session.slotId}` as 'slot0' | 'slot1'] : undefined
 
   return (
-    <Modal title={`${item.title} (${item.year ?? '-'})`} onClose={onClose} maxWidth="620px">
+    <Modal title={`${item.title} (${item.year ?? '-'})`} onClose={onClose} maxWidth="620px" zIndex={70}>
       <div className="detail-layout">
         {poster ? (
           <img className="detail-poster" src={poster} alt={item.title} />

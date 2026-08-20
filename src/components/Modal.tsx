@@ -6,9 +6,10 @@ interface ModalProps {
   onClose: () => void
   children: ReactNode
   maxWidth?: string
+  zIndex?: number
 }
 
-export default function Modal({ title, onClose, children, maxWidth }: ModalProps) {
+export default function Modal({ title, onClose, children, maxWidth, zIndex }: ModalProps) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -22,7 +23,7 @@ export default function Modal({ title, onClose, children, maxWidth }: ModalProps
   }, [onClose])
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose} style={zIndex ? { zIndex } : undefined}>
       <div
         className="modal"
         role="dialog"

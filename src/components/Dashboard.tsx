@@ -10,6 +10,7 @@ import ListColumn from './ListColumn'
 interface DashboardProps {
   onOpenDetail: (item: MediaItem) => void
   onRate: (item: MediaItem) => void
+  onPlan: (item: MediaItem) => void
 }
 
 const COLUMN_META: Record<ListKey, { title: string; subtitle: string }> = {
@@ -36,8 +37,8 @@ function parseDragId(id: string | number): DragId | null {
   return { listKey, mediaKey, mediaId: Number(mediaIdMatch[1]) }
 }
 
-export default function Dashboard({ onOpenDetail, onRate }: DashboardProps) {
-  const { lists, ratings, moveToList, reorderWithin, removeFromList } = useData()
+export default function Dashboard({ onOpenDetail, onRate, onPlan }: DashboardProps) {
+  const { lists, ratings, plans, moveToList, reorderWithin, removeFromList } = useData()
   const { loggedIn } = useAuth()
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }))
@@ -84,10 +85,12 @@ export default function Dashboard({ onOpenDetail, onRate }: DashboardProps) {
                 subtitle={COLUMN_META[key].subtitle}
                 items={lists[key]}
                 ratings={ratings}
+                plans={plans}
                 draggable={loggedIn}
                 onOpenDetail={onOpenDetail}
                 onRemove={(id) => removeFromList(key, id)}
                 onRate={key === 'watched' ? onRate : undefined}
+                onPlan={key === 'wantToWatch' ? onPlan : undefined}
               />
             </SortableContext>
           )

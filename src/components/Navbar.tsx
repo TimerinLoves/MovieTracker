@@ -4,10 +4,11 @@ import ThemeSwitcher from './ThemeSwitcher'
 interface NavbarProps {
   query: string
   onQueryChange: (value: string) => void
+  onOpenCalendar: () => void
   onOpenSettings: () => void
 }
 
-export default function Navbar({ query, onQueryChange, onOpenSettings }: NavbarProps) {
+export default function Navbar({ query, onQueryChange, onOpenCalendar, onOpenSettings }: NavbarProps) {
   const { session, loggedIn } = useAuth()
 
   return (
@@ -30,6 +31,9 @@ export default function Navbar({ query, onQueryChange, onOpenSettings }: NavbarP
 
       <div className="nav-actions">
         <ThemeSwitcher />
+        <button type="button" className="btn btn-ghost nav-calendar" onClick={onOpenCalendar} title="Calendar">
+          ✦
+        </button>
         <button type="button" className="btn btn-ghost nav-settings" onClick={onOpenSettings} title="Settings">
           ⚙
         </button>

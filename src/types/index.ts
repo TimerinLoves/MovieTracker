@@ -63,6 +63,18 @@ export interface MovieRating {
 /** Key format: `${mediaType}-${id}` */
 export type RatingsMap = Record<string, MovieRating>
 
+export interface WatchPlan {
+  item: MediaItem
+  date: string
+  startTime: string
+  durationMinutes?: number | null
+}
+
+/** Key format: `${mediaType}-${id}` */
+export type PlansMap = Record<string, WatchPlan>
+
+export const EMPTY_PLANS: PlansMap = {}
+
 export interface AuthConfig {
   version: number
   users: { passwordHash: string }[]

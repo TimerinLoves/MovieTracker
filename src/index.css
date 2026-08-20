@@ -1135,6 +1135,180 @@ code {
   backdrop-filter: blur(8px);
 }
 
+/* ============ plan button + plan modal + calendar ============ */
+.btn-plan {
+  width: 100%;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+}
+
+.btn-plan.planned {
+  color: color-mix(in srgb, var(--accent) 85%, var(--text));
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.plan-layout .detail-poster {
+  width: 90px;
+  height: 130px;
+}
+
+.plan-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.plan-runtime {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.calendar-subtitle {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  min-height: 132px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calendar-day.today {
+  border-color: color-mix(in srgb, var(--accent) 75%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.calendar-day-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.calendar-day-num {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.calendar-day.today .calendar-day-num {
+  color: var(--accent);
+}
+
+.calendar-today-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.calendar-deck {
+  position: relative;
+  flex: 1;
+  min-height: 56px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.calendar-deck-card {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate3d(calc(-1 * var(--off, 0px)), calc(-1 * 0.6 * var(--off, 0px)), 0) rotate(calc(-1 * 1.2deg * var(--off, 0px)));
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, z-index 0s;
+  z-index: 1;
+}
+
+.calendar-deck-card:nth-child(odd) {
+  rotate: -3deg;
+}
+
+.calendar-deck-card:nth-child(even) {
+  rotate: 3deg;
+}
+
+.calendar-deck-card.is-top {
+  z-index: 2;
+}
+
+.calendar-deck-card:hover {
+  transform: translate3d(calc(-1 * var(--off, 0px)), calc(-1 * 0.6 * var(--off, 0px)), 0) translateY(-3px) scale(1.04);
+  z-index: 3;
+}
+
+.calendar-deck-poster {
+  display: block;
+  height: 52px;
+  width: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface-2);
+}
+
+.calendar-deck-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.calendar-deck-poster .calendar-stack-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.calendar-deck-times {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  padding: 1px 6px;
+  border-radius: 999px;
+  z-index: 4;
+}
+
 /* ============ responsive ============ */
 @media (max-width: 1000px) {
   .dashboard {

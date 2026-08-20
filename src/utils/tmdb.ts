@@ -94,3 +94,21 @@ export async function getGenreMap(): Promise<Map<number, string>> {
   }
   return combined
 }
+
+interface DetailResponse {
+  runtime?: number
+  episode_run_time?: number[]
+}
+
+/** Rough watch time in minutes. Movies use `runtime`; shows use `episode_run_time`. */
+export async function fetchRuntimeMinutes(item: MediaItem): Promise<number | null> {
+  if (!hasTmdbConfig()) return null
+  try {
+    const data = (await fetchJson(`/${item.mediaType}/${item.id}`)) as DetailResponse
+    if (item.mediaType === 'movie') return data.runtime ?? null
+    const times = data.episode_run_time?.filter((t) => t > 0)
+    return times && times.length > 0 ? times[0] : null
+  } catch {
+    return null
+  }
+}

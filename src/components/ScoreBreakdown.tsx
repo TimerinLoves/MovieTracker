@@ -18,7 +18,7 @@ export default function ScoreBreakdown({ title, rating, labelA, labelB, onClose 
   const combined = combineRatings(a?.average, b?.average)
 
   return (
-    <Modal title={`Score breakdown - ${title}`} onClose={onClose} maxWidth="640px">
+    <Modal title={`Score breakdown - ${title}`} onClose={onClose} maxWidth="640px" zIndex={80}>
       <table className="breakdown-table">
         <thead>
           <tr>

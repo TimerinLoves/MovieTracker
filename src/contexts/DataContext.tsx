@@ -1,10 +1,10 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import { averageCategoryScores } from '../constants'
-import type { CategoryScores, ListKey, Lists, MediaItem, RatingsMap, UserRating } from '../types'
+import type { CategoryScores, ListKey, Lists, MediaItem, PlansMap, RatingsMap, UserRating, WatchPlan } from '../types'
 import { LIST_KEYS } from '../types'
 import { getRepo, readJsonFile, writeJsonFile } from '../utils/github'
-import { loadListsCache, loadRatingsCache, saveListsCache, saveRatingsCache } from '../utils/storage'
+import { loadListsCache, loadPlansCache, loadRatingsCache, saveListsCache, savePlansCache, saveRatingsCache } from '../utils/storage'
 import { useAuth } from './AuthContext'
 
 export type SyncState = 'loading' | 'idle' | 'syncing' | 'offline'
@@ -12,11 +12,13 @@ export type SyncState = 'loading' | 'idle' | 'syncing' | 'offline'
 interface DataState {
   lists: Lists
   ratings: RatingsMap
+  plans: PlansMap
 }
 
 interface DataContextValue {
   lists: Lists
   ratings: RatingsMap
+  plans: PlansMap
   syncState: SyncState
   syncReason: string | null
   repoConfigured: boolean
@@ -26,6 +28,8 @@ interface DataContextValue {
   reorderWithin: (listKey: ListKey, activeId: number, overId: number) => void
   rateItem: (mediaKey: string, scores: CategoryScores) => void
   removeMyRating: (mediaKey: string) => void
+  planItem: (mediaKey: string, plan: WatchPlan) => void
+  unplanItem: (mediaKey: string) => void
   refreshFromGitHub: () => Promise<void>
 }
 
@@ -36,6 +40,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<DataState>(() => ({
     lists: loadListsCache(),
     ratings: loadRatingsCache(),
+    plans: loadPlansCache(),
   }))
   const [syncing, setSyncing] = useState(false)
   const [syncReason, setSyncReason] = useState<string | null>(null)
@@ -47,6 +52,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     (next: DataState) => {
       saveListsCache(next.lists)
       saveRatingsCache(next.ratings)
+      savePlansCache(next.plans)
 
       const token = getGitHubToken()
       if (!repoConfigured) {
@@ -63,6 +69,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       Promise.all([
         writeJsonFile('data/lists.json', next.lists, token, `Update lists [${name}]`),
         writeJsonFile('data/ratings.json', next.ratings, token, `Update ratings [${name}]`),
+        writeJsonFile('data/plans.json', next.plans, token, `Update plans [${name}]`),
       ])
         .then((results) => {
           setSyncReason(results.some((r) => !r) ? 'Failed to sync to GitHub.' : null)
@@ -77,6 +84,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     (updater: (prev: DataState) => DataState) => {
       setData((prev) => {
         const next = updater(prev)
+        if (next === prev) return prev
         persistAndSync(next)
         return next
       })
@@ -120,17 +128,26 @@ export function DataProvider({ children }: { children: ReactNode }) {
         if (!item) return prev
         const source = prev.lists[fromKey].filter((m) => m.id !== id)
         const target = [...prev.lists[toKey]]
+        let plans = prev.plans
+
+        // Leaving the want-to-watch queue cancels any scheduling: clear the plan
+        // so it no longer shows on the calendar.
+        const mediaKey = `${item.mediaType}-${item.id}`
+        if (fromKey === 'wantToWatch' && mediaKey in plans) {
+          const { [mediaKey]: _removed, ...rest } = plans
+          plans = rest
+        }
 
         if (overId !== undefined) {
           const overIdx = target.findIndex((m) => m.id === overId)
           if (overIdx >= 0) {
             target.splice(overIdx, 0, item)
-            return { ...prev, lists: { ...prev.lists, [fromKey]: source, [toKey]: target } }
+            return { ...prev, plans, lists: { ...prev.lists, [fromKey]: source, [toKey]: target } }
           }
         }
 
         target.push(item)
-        return { ...prev, lists: { ...prev.lists, [fromKey]: source, [toKey]: target } }
+        return { ...prev, plans, lists: { ...prev.lists, [fromKey]: source, [toKey]: target } }
       })
     },
     [mutate],
@@ -187,13 +204,76 @@ export function DataProvider({ children }: { children: ReactNode }) {
     [mutate, session],
   )
 
+  const planItem = useCallback(
+    (mediaKey: string, plan: WatchPlan) => {
+      mutate((prev) => ({ ...prev, plans: { ...prev.plans, [mediaKey]: plan } }))
+    },
+    [mutate],
+  )
+
+  const unplanItem = useCallback(
+    (mediaKey: string) => {
+      mutate((prev) => {
+        if (!(mediaKey in prev.plans)) return prev
+        const { [mediaKey]: _removed, ...rest } = prev.plans
+        return { ...prev, plans: rest }
+      })
+    },
+    [mutate],
+  )
+
+  const advanceDuePlans = useCallback(() => {
+    mutate((prev) => {
+      const now = new Date()
+      const pad = (n: number) => String(n).padStart(2, '0')
+      const nowKey = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`
+
+      const wantToWatch = [...prev.lists.wantToWatch]
+      const moved: MediaItem[] = []
+      let plans = prev.plans
+
+      for (let i = wantToWatch.length - 1; i >= 0; i--) {
+        const item = wantToWatch[i]
+        const key = `${item.mediaType}-${item.id}`
+        const plan = plans[key]
+        if (!plan) continue
+        const dueStamp = `${plan.date} ${plan.startTime}`
+        if (dueStamp > nowKey) continue
+        wantToWatch.splice(i, 1)
+        moved.push(item)
+        const { [key]: _removed, ...rest } = plans
+        plans = rest
+      }
+
+      if (moved.length === 0) return prev
+      return {
+        ...prev,
+        plans,
+        lists: {
+          ...prev.lists,
+          wantToWatch,
+          currentlyWatching: [...prev.lists.currentlyWatching, ...moved],
+        },
+      }
+    })
+  }, [mutate])
+
+  // Roll due scheduled watches into "currently watching" (never past that).
+  useEffect(() => {
+    advanceDuePlans()
+    const id = window.setInterval(advanceDuePlans, 30_000)
+    return () => window.clearInterval(id)
+  }, [advanceDuePlans])
+
   const refreshFromGitHub = useCallback(async () => {
-    const [remoteLists, remoteRatings] = await Promise.all([
-      readJsonFile<Lists>('data/lists.json'),
-      readJsonFile<RatingsMap>('data/ratings.json'),
+    const token = getGitHubToken()
+    const [remoteLists, remoteRatings, remotePlans] = await Promise.all([
+      readJsonFile<Lists>('data/lists.json', token),
+      readJsonFile<RatingsMap>('data/ratings.json', token),
+      readJsonFile<PlansMap>('data/plans.json', token),
     ])
     setData((prev) => {
-      const next: DataState = { lists: prev.lists, ratings: prev.ratings }
+      const next: DataState = { lists: prev.lists, ratings: prev.ratings, plans: prev.plans }
       if (remoteLists) {
         next.lists = {
           wantToWatch: remoteLists.wantToWatch ?? [],
@@ -206,9 +286,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
         next.ratings = remoteRatings
         saveRatingsCache(next.ratings)
       }
+      if (remotePlans) {
+        next.plans = remotePlans
+        savePlansCache(next.plans)
+      }
       return next
     })
-  }, [])
+  }, [getGitHubToken])
 
   useEffect(() => {
     refreshFromGitHub()
@@ -218,6 +302,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     () => ({
       lists: data.lists,
       ratings: data.ratings,
+      plans: data.plans,
       syncState,
       syncReason,
       repoConfigured,
@@ -227,6 +312,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
       reorderWithin,
       rateItem,
       removeMyRating,
+      planItem,
+      unplanItem,
       refreshFromGitHub,
     }),
     [
@@ -240,6 +327,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
       reorderWithin,
       rateItem,
       removeMyRating,
+      planItem,
+      unplanItem,
       refreshFromGitHub,
     ],
   )

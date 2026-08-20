@@ -1,5 +1,5 @@
-import type { Lists, RatingsMap, SessionData } from '../types'
-import { EMPTY_LISTS } from '../types'
+import type { Lists, PlansMap, RatingsMap, SessionData } from '../types'
+import { EMPTY_PLANS, EMPTY_LISTS } from '../types'
 
 const PREFIX = 'mt:'
 
@@ -96,6 +96,20 @@ export function loadRatingsCache(): RatingsMap {
 
 export function saveRatingsCache(ratings: RatingsMap): void {
   set('cache.ratings', JSON.stringify(ratings))
+}
+
+export function loadPlansCache(): PlansMap {
+  const raw = get('cache.plans')
+  if (!raw) return EMPTY_PLANS
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return EMPTY_PLANS
+  }
+}
+
+export function savePlansCache(plans: PlansMap): void {
+  set('cache.plans', JSON.stringify(plans))
 }
 
 // ---- misc ----
