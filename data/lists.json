@@ -123,6 +123,37 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:15:17.486Z"
+    },
+    {
+      "id": 253557,
+      "mediaType": "tv",
+      "title": "Final Destination",
+      "year": "2012",
+      "overview": "When Murph has a premonition of a breakroom bloodbath, it sets off a chain of deadly events in the CollegeHumor offices. They can run, but they can't hide.",
+      "posterPath": "/rWx5ZO9bxgU1PJfh169VL5ZYZIm.jpg",
+      "backdropPath": "/kI6vGCgpaqB4F6tUrbrERbxlRIf.jpg",
+      "voteAverage": 9,
+      "genreIds": [
+        35
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:18:36.006Z"
+    },
+    {
+      "id": 574475,
+      "mediaType": "movie",
+      "title": "Final Destination Bloodlines",
+      "year": "2025",
+      "overview": "Plagued by a violent recurring nightmare, college student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.",
+      "posterPath": "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg",
+      "backdropPath": "/uIpJPDNFoeX0TVml9smPrs9KUVx.jpg",
+      "voteAverage": 7.032,
+      "genreIds": [
+        27,
+        9648
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:18:39.166Z"
     }
   ],
   "currentlyWatching": [],
