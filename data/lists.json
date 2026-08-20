@@ -303,7 +303,9 @@
       ],
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:23:30.618Z"
-    },
+    }
+  ],
+  "watched": [
     {
       "id": 584,
       "mediaType": "movie",
@@ -321,6 +323,5 @@
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:24:05.576Z"
     }
-  ],
-  "watched": []
+  ]
 }
