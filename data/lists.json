@@ -841,6 +841,24 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:17:11.993Z"
+    },
+    {
+      "id": 40546,
+      "mediaType": "tv",
+      "title": "The 10th Kingdom",
+      "year": "2000",
+      "overview": "Virginia and Tony, a father and daughter living in Manhattan, find themselves in a parallel universe where Snow White, Cinderella and Little Red Riding Hood are struggling to maintain order. Their kingdoms have been fragmented by trolls, giants and goblins.",
+      "posterPath": "/aD5ISjx3AG1rygncAdv7eb8KYYo.jpg",
+      "backdropPath": "/6lYM8Xs6R4Uc5iYEIQsypwVigqi.jpg",
+      "voteAverage": 7.6,
+      "genreIds": [
+        10765,
+        35,
+        10751,
+        9648
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:26:52.009Z"
     }
   ],
   "currentlyWatching": [],
