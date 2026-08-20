@@ -466,6 +466,23 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:40:19.621Z"
+    },
+    {
+      "id": 490132,
+      "mediaType": "movie",
+      "title": "Green Book",
+      "year": "2018",
+      "overview": "Tony Lip, a bouncer in 1962, is hired to drive pianist Don Shirley on a tour through the Deep South in the days when African Americans, forced to find alternate accommodations and services due to segregation laws below the Mason-Dixon Line, relied on a guide called The Negro Motorist Green Book.",
+      "posterPath": "/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+      "backdropPath": "/5En0fmDagt3Pk8d7P3uTwfeQceg.jpg",
+      "voteAverage": 8.223,
+      "genreIds": [
+        18,
+        35,
+        36
+      ],
+      "addedBy": "Timerin",
+      "addedAt": "2026-08-20T21:41:20.069Z"
     }
   ],
   "currentlyWatching": [],
