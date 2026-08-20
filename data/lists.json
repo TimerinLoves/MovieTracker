@@ -841,26 +841,6 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:17:11.993Z"
-    },
-    {
-      "id": 10986,
-      "mediaType": "tv",
-      "title": "The NeverEnding Story",
-      "year": "1995",
-      "overview": "The animated adventures of Bastian Balthazar Bux in the enchanted storybook world of Fantasia.",
-      "posterPath": "/9hJwz9QzpntihSMtmTKYcqzkauS.jpg",
-      "backdropPath": "/1TqdB5c4bmA35OHG0yvOmnLBLgb.jpg",
-      "voteAverage": 5.75,
-      "genreIds": [
-        16,
-        10759,
-        10751,
-        10765,
-        10762,
-        18
-      ],
-      "addedBy": "Sushi",
-      "addedAt": "2026-08-20T22:16:54.918Z"
     }
   ],
   "currentlyWatching": [],
