@@ -14,5 +14,21 @@
       "ratedAt": "2026-08-20T21:35:07.583Z",
       "ratedByName": "Timerin"
     }
+  },
+  "movie-584": {
+    "slot0": {
+      "scores": {
+        "story": 4,
+        "acting": 4,
+        "visuals": 3,
+        "music": 3,
+        "rewatchability": 4,
+        "pacing": 5,
+        "emotionalImpact": 4
+      },
+      "average": 3.9,
+      "ratedAt": "2026-08-20T21:35:35.967Z",
+      "ratedByName": "Timerin"
+    }
   }
 }
