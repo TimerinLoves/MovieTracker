@@ -1,0 +1,18 @@
+[data-theme='peachyDreams'] {
+  --bg: #ffe8d6;
+  --bg-gradient: linear-gradient(180deg, #fff3d6 0%, #ffdab9 45%, #ff9e7e 140%);
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-2: rgba(255, 255, 255, 0.85);
+  --text: #6b4632;
+  --text-muted: #9c7760;
+  --accent: #ff8a5c;
+  --accent-2: #ffcd5d;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.95);
+  --shadow: 0 8px 22px rgba(214, 135, 90, 0.25);
+  --nav-bg: rgba(255, 236, 214, 0.7);
+  --glow: #ffc09f;
+  --star: #ffb347;
+  --chip-movie: #ff8a5c;
+  --chip-tv: #ffcd5d;
+}

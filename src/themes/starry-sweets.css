@@ -1,0 +1,18 @@
+[data-theme='starrySweets'] {
+  --bg: #221349;
+  --bg-gradient: radial-gradient(120% 130% at 60% 0%, #4a215c 0%, #2d1b69 50%, #120a2e 100%);
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --text: #f7eefe;
+  --text-muted: #b3a1d6;
+  --accent: #f0a8d4;
+  --accent-2: #ffd166;
+  --accent-text: #341a4d;
+  --border: rgba(255, 255, 255, 0.15);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(20, 10, 44, 0.78);
+  --glow: #ffd166;
+  --star: #ffd166;
+  --chip-movie: #f0a8d4;
+  --chip-tv: #ffd166;
+}

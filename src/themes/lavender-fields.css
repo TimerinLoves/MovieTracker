@@ -1,0 +1,18 @@
+[data-theme='lavenderFields'] {
+  --bg: #efeaf8;
+  --bg-gradient: linear-gradient(180deg, #f8f4ff 0%, #e6ddef 50%, #fff6e4 130%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.85);
+  --text: #4d3b63;
+  --text-muted: #8a76a3;
+  --accent: #9c7bc9;
+  --accent-2: #d4a8e0;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.9);
+  --shadow: 0 8px 22px rgba(140, 110, 180, 0.2);
+  --nav-bg: rgba(250, 246, 255, 0.7);
+  --glow: #d8c6ea;
+  --star: #c99bd8;
+  --chip-movie: #9c7bc9;
+  --chip-tv: #d4a8e0;
+}

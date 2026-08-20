@@ -1,0 +1,18 @@
+[data-theme='cloudCinema'] {
+  --bg: #ffeef4;
+  --bg-gradient: linear-gradient(160deg, #fff0f6 0%, #ffc9d6 40%, #b7ddf5 150%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.88);
+  --text: #5a4a67;
+  --text-muted: #91818f;
+  --accent: #ff8fb5;
+  --accent-2: #6fb8e8;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.95);
+  --shadow: 0 8px 22px rgba(150, 130, 140, 0.22);
+  --nav-bg: rgba(255, 250, 252, 0.7);
+  --glow: #ffb7c5;
+  --star: #ffb347;
+  --chip-movie: #ff8fb5;
+  --chip-tv: #6fb8e8;
+}

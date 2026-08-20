@@ -1,0 +1,19 @@
+:root,
+[data-theme='moonlitMacarons'] {
+  --bg: #2d1b4a;
+  --bg-gradient: radial-gradient(120% 120% at 50% 0%, #4a3660 0%, #2d1b48 60%, #1a0f2e 100%);
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --text: #f3eafc;
+  --text-muted: #b9a6d6;
+  --accent: #ff9ec4;
+  --accent-2: #e6a8ff;
+  --accent-text: #3a1f4d;
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(30, 16, 52, 0.75);
+  --glow: #ffb7c5;
+  --star: #ffd9a0;
+  --chip-movie: #b49ae0;
+  --chip-tv: #8ec8df;
+}

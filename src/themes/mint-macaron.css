@@ -1,0 +1,18 @@
+[data-theme='mintMacaron'] {
+  --bg: #eefbe8;
+  --bg-gradient: linear-gradient(180deg, #f3ffef 0%, #d8f8cf 45%, #ffdce6 140%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.88);
+  --text: #36604a;
+  --text-muted: #6f937f;
+  --accent: #5ecf8e;
+  --accent-2: #ff9cc2;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.9);
+  --shadow: 0 8px 22px rgba(110, 160, 130, 0.22);
+  --nav-bg: rgba(255, 255, 255, 0.66);
+  --glow: #a9eec9;
+  --star: #f7a8c9;
+  --chip-movie: #5ecf8e;
+  --chip-tv: #ff9cc2;
+}

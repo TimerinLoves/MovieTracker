@@ -1,0 +1,18 @@
+[data-theme='snowflakeSorbet'] {
+  --bg: #dbeef2;
+  --bg-gradient: linear-gradient(180deg, #eaf7fb 0%, #cfeef7 40%, #f2d8e8 100%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.85);
+  --text: #33505a;
+  --text-muted: #6d8e9b;
+  --accent: #61c0d8;
+  --accent-2: #ff9cc2;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.9);
+  --shadow: 0 8px 22px rgba(120, 150, 160, 0.28);
+  --nav-bg: rgba(255, 255, 255, 0.65);
+  --glow: #bdebf5;
+  --star: #f7a8c9;
+  --chip-movie: #61c0d8;
+  --chip-tv: #f7a8c9;
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "users": [
+    {
+      "passwordHash": "4e4dbb9212203fdcbf59acf30ac599054bdfd54fa27cf2f8b7448c8a7a37efb0"
+    },
+    {
+      "passwordHash": "bd22761f1205425edb6822b3b4ab06d2e589de911f01f8ebacfff5ab693b82fe"
+    }
+  ]
+}

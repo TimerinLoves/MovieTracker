@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Build-time env vars are embedded in the bundle. GIT_PUSH_TOKEN is a shared
+      # fine-grained write token used by any logged-in user as a fallback. It lives
+      # only in the bundle (readable), so scope it to this repo only. Users can still
+      # paste their own token in the app to override it.
+      - name: Create env file
+        run: |
+          cat > .env <<EOF
+          VITE_TMDB_API_TOKEN=${{ secrets.TMDB_API_TOKEN }}
+          VITE_GITHUB_REPO=${{ secrets.REPO_NAME }}
+          VITE_GITHUB_TOKEN=${{ secrets.GIT_PUSH_TOKEN }}
+          EOF
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4

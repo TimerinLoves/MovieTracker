@@ -1,0 +1,18 @@
+[data-theme='bubblegumGalaxy'] {
+  --bg: #ffdce6;
+  --bg-gradient: radial-gradient(120% 120% at 30% 10%, #ffe5ee 0%, #ffc8d6 45%, #e6c8ee 130%);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-2: rgba(255, 255, 255, 0.8);
+  --text: #6e4256;
+  --text-muted: #a07993;
+  --accent: #ff7fb0;
+  --accent-2: #b58ce0;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.95);
+  --shadow: 0 8px 22px rgba(214, 120, 155, 0.25);
+  --nav-bg: rgba(255, 236, 244, 0.7);
+  --glow: #ffb7c5;
+  --star: #ff9cc8;
+  --chip-movie: #ff7fb0;
+  --chip-tv: #b58ce0;
+}

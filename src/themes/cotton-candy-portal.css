@@ -1,0 +1,18 @@
+[data-theme='cottonCandyPortal'] {
+  --bg: #ffd6ea;
+  --bg-gradient: linear-gradient(120deg, #ffd0e6 0%, #ffa8d0 50%, #7cabff 140%);
+  --surface: rgba(255, 255, 255, 0.45);
+  --surface-2: rgba(255, 255, 255, 0.6);
+  --text: #4b2a4a;
+  --text-muted: #8a5f88;
+  --accent: #ff5fae;
+  --accent-2: #4f7bff;
+  --accent-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.7);
+  --shadow: 0 8px 24px rgba(200, 90, 150, 0.3);
+  --nav-bg: rgba(255, 200, 230, 0.6);
+  --glow: #ff9cc8;
+  --star: #ffb84d;
+  --chip-movie: #ff5fae;
+  --chip-tv: #4f7bff;
+}
