@@ -266,6 +266,23 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:26:02.644Z"
+    },
+    {
+      "id": 165,
+      "mediaType": "movie",
+      "title": "Back to the Future Part II",
+      "year": "1989",
+      "overview": "Marty and Doc are at it again as the time-traveling duo head to 2015 to nip some McFly family woes in the bud. But things go awry thanks to bully Biff Tannen and a pesky sports almanac. In a last-ditch attempt to set things straight, Marty finds himself bound for 1955 and face to face with his teenage parents -- again.",
+      "posterPath": "/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg",
+      "backdropPath": "/w6tPctxWAsHoQXeKxxNOT6lYKpx.jpg",
+      "voteAverage": 7.785,
+      "genreIds": [
+        12,
+        35,
+        878
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:26:08.267Z"
     }
   ],
   "currentlyWatching": [],
