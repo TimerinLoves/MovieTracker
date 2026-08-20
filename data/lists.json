@@ -574,6 +574,23 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:49:53.886Z"
+    },
+    {
+      "id": 1584,
+      "mediaType": "movie",
+      "title": "The School of Rock",
+      "year": "2003",
+      "overview": "Fired from his band and hard up for cash, guitarist and vocalist Dewey Finn finagles his way into a job as a fifth-grade substitute teacher at a private school, where he secretly begins teaching his straight-A students the finer points of rock 'n' roll and the power of sticking it to the man. But as the school’s stern principal closes in and the Battle of the Bands looms, Dewey must risk everything to prove that rock 'n' roll can change lives.",
+      "posterPath": "/zXLXaepIBvFVLU25DH3wv4IPSbe.jpg",
+      "backdropPath": "/k5MTAtE9CCi5TWA84qaFMYv3ajB.jpg",
+      "voteAverage": 7.091,
+      "genreIds": [
+        35,
+        10751,
+        10402
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:51:07.354Z"
     }
   ],
   "currentlyWatching": [],
