@@ -283,6 +283,23 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:26:08.267Z"
+    },
+    {
+      "id": 196,
+      "mediaType": "movie",
+      "title": "Back to the Future Part III",
+      "year": "1990",
+      "overview": "The final installment finds Marty digging the trusty DeLorean out of a mineshaft and looking for Doc in the Wild West of 1885. But when their time machine breaks down, the travelers are stranded in a land of spurs. More problems arise when Doc falls for pretty schoolteacher Clara Clayton, and Marty tangles with Buford Tannen.",
+      "posterPath": "/crzoVQnMzIrRfHtQw0tLBirNfVg.jpg",
+      "backdropPath": "/AtF7TESJEMmImBRUj9Z7HmW2ZH0.jpg",
+      "voteAverage": 7.496,
+      "genreIds": [
+        12,
+        35,
+        878
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:26:14.243Z"
     }
   ],
   "currentlyWatching": [],
