@@ -268,7 +268,8 @@
       "addedAt": "2026-08-20T21:23:54.391Z"
     }
   ],
-  "currentlyWatching": [
+  "currentlyWatching": [],
+  "watched": [
     {
       "id": 9799,
       "mediaType": "movie",
@@ -285,9 +286,7 @@
       ],
       "addedBy": "Timerin",
       "addedAt": "2026-08-20T21:23:23.684Z"
-    }
-  ],
-  "watched": [
+    },
     {
       "id": 584,
       "mediaType": "movie",
