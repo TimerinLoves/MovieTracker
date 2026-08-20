@@ -169,6 +169,38 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T21:18:43.307Z"
+    },
+    {
+      "id": 9358,
+      "mediaType": "movie",
+      "title": "Final Destination 2",
+      "year": "2003",
+      "overview": "When Kimberly has a violent premonition of a highway pileup she blocks the freeway, keeping a few others meant to die, safe...Or are they? The survivors mysteriously start dying and it's up to Kimberly to stop it before she's next.",
+      "posterPath": "/vnFgxRlLTA9fDNcGXLiHmgwmIEo.jpg",
+      "backdropPath": "/tKnmfO5lAyu8hpTZMyMaI4lhZpJ.jpg",
+      "voteAverage": 6.318,
+      "genreIds": [
+        27,
+        9648
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:18:46.119Z"
+    },
+    {
+      "id": 55779,
+      "mediaType": "movie",
+      "title": "Final Destination 5",
+      "year": "2011",
+      "overview": "Death is just as omnipresent as ever, and is unleashed after one man’s premonition saves a group of coworkers from a terrifying suspension bridge collapse. But this group of unsuspecting souls was never supposed to survive, and, in a terrifying race against time, the ill-fated group frantically tries to discover a way to escape Death’s sinister agenda.",
+      "posterPath": "/Akx1Po4ZLetOWfYJhQf75tbhTtK.jpg",
+      "backdropPath": "/5cG2XcylxUIclQsGPBKTtfoqcBV.jpg",
+      "voteAverage": 6.157,
+      "genreIds": [
+        27,
+        9648
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:18:48.179Z"
     }
   ],
   "currentlyWatching": [],
