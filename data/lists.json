@@ -843,6 +843,24 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:16:54.918Z"
+    },
+    {
+      "id": 34636,
+      "mediaType": "movie",
+      "title": "The NeverEnding Story II: The Next Chapter",
+      "year": "1990",
+      "overview": "Once again, Bastian is transported to the world of Fantasia which he recently managed to save from destruction. However, the land is now being destroyed by an evil sorceress, Xayide, so he must join up with Atreyu and face the Emptiness once more.",
+      "posterPath": "/5QfUCbgKzWzjHO5X4ANsDmuTxNQ.jpg",
+      "backdropPath": "/22328gc644F4pZn30nWPPUo4I93.jpg",
+      "voteAverage": 5.779,
+      "genreIds": [
+        10751,
+        14,
+        12,
+        18
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:17:11.993Z"
     }
   ],
   "currentlyWatching": [],
