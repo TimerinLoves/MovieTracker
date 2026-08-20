@@ -251,242 +251,76 @@
       "addedAt": "2026-08-20T21:19:23.708Z"
     },
     {
-      "id": 77959,
+      "id": 105,
       "mediaType": "movie",
-      "title": "The Turbo Charged Prelude for 2 Fast 2 Furious",
-      "year": "2003",
-      "overview": "Turbo-Charged Prelude is a 2003 short film, directed by Philip Atwell, featuring Paul Walker, reprising his role as Brian O'Conner, in a short series of sequences which bridge The Fast and The Furious with its first sequel, 2 Fast 2 Furious.",
-      "posterPath": "/cmhFOjy47UqrOafl0oQiygcJ7oT.jpg",
-      "backdropPath": "/RNwYzncrTzMHdjv7qwcIzq34Om.jpg",
-      "voteAverage": 6.116,
+      "title": "Back to the Future",
+      "year": "1985",
+      "overview": "Eighties teenager Marty McFly is accidentally sent back in time to 1955, inadvertently disrupting his parents' first meeting and attracting his mother's romantic interest. Marty must repair the damage to history by rekindling his parents' romance and - with the help of his eccentric inventor friend Doc Brown - return to 1985.",
+      "posterPath": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+      "backdropPath": "/5bzPWQ2dFUl2aZKkp7ILJVVkRed.jpg",
+      "voteAverage": 8.328,
       "genreIds": [
-        28
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:26:08.158Z"
-    },
-    {
-      "id": 13804,
-      "mediaType": "movie",
-      "title": "Fast & Furious",
-      "year": "2009",
-      "overview": "When a crime brings them back to L.A., fugitive ex-con Dom Toretto reignites his feud with agent Brian O'Conner. But as they are forced to confront a shared enemy, Dom and Brian must give in to an uncertain new trust if they hope to outmaneuver him. And the two men will find the best way to get revenge: push the limits of what's possible behind the wheel.",
-      "posterPath": "/lUtVoRukW7WNtUySwd8hWlByBds.jpg",
-      "backdropPath": "/25HepicRtrzZ3MVCqhfoxGDbHjw.jpg",
-      "voteAverage": 6.688,
-      "genreIds": [
-        28,
-        80,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:23:54.391Z"
-    },
-    {
-      "id": 253835,
-      "mediaType": "movie",
-      "title": "Los Bandoleros",
-      "year": "2009",
-      "overview": "The film tells the back story about the characters and events leading up to the explosive oil truck heist in Fast &amp; Furious.",
-      "posterPath": "/6QK7BKiEQ10DwGDasxuPhQNb5Bt.jpg",
-      "backdropPath": "/q4MG2j8a7QEjg3ksd4hFXwBSNPf.jpg",
-      "voteAverage": 6.151,
-      "genreIds": [
-        28,
-        18
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:26:41.331Z"
-    },
-    {
-      "id": 51497,
-      "mediaType": "movie",
-      "title": "Fast Five",
-      "year": "2011",
-      "overview": "Former cop Brian O'Conner partners with ex-con Dom Toretto on the opposite side of the law. Since Brian and Mia Toretto broke Dom out of custody, they've blown across many borders to elude authorities. Now backed into a corner in Rio de Janeiro, they must pull one last job in order to gain their freedom.",
-      "posterPath": "/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg",
-      "backdropPath": "/c1Q8jLoaruQ9m5lCrVlXOaJJtu7.jpg",
-      "voteAverage": 7.245,
-      "genreIds": [
-        28,
-        53,
-        80
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:27:15.002Z"
-    },
-    {
-      "id": 82992,
-      "mediaType": "movie",
-      "title": "Fast & Furious 6",
-      "year": "2013",
-      "overview": "Hobbs has Dominic and Brian reassemble their crew to take down a team of mercenaries; Dominic unexpectedly gets sidetracked with facing his presumed deceased girlfriend, Letty.",
-      "posterPath": "/thSmnRdrzPBBospIOJjLZBReqzo.jpg",
-      "backdropPath": "/xDp29MSWa7O3ROC13r6dPTFnREJ.jpg",
-      "voteAverage": 6.817,
-      "genreIds": [
-        28,
-        53,
-        80
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:27:25.062Z"
-    },
-    {
-      "id": 168259,
-      "mediaType": "movie",
-      "title": "Furious 7",
-      "year": "2015",
-      "overview": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
-      "posterPath": "/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
-      "backdropPath": "/ehzI1mVcnHqB58NqPyQwpMqcVoz.jpg",
-      "voteAverage": 7.214,
-      "genreIds": [
-        28,
-        80,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:27:35.009Z"
-    },
-    {
-      "id": 337339,
-      "mediaType": "movie",
-      "title": "The Fate of the Furious",
-      "year": "2017",
-      "overview": "When a mysterious woman seduces Dom into the world of crime and a betrayal of those closest to him, the crew face trials that will test them as never before.",
-      "posterPath": "/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg",
-      "backdropPath": "/3IJ8kG8i84PncXkSovu0PaZQfjM.jpg",
-      "voteAverage": 6.851,
-      "genreIds": [
-        28,
-        80,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:27:44.563Z"
-    },
-    {
-      "id": 384018,
-      "mediaType": "movie",
-      "title": "Fast & Furious Presents: Hobbs & Shaw",
-      "year": "2019",
-      "overview": "Ever since US Diplomatic Security Service Agent Hobbs and lawless outcast Shaw first faced off, they just have traded smack talk and body blows. But when cyber-genetically enhanced anarchist Brixton's ruthless actions threaten the future of humanity, they join forces to defeat him.",
-      "posterPath": "/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg",
-      "backdropPath": "/hpgda6P9GutvdkDX5MUJ92QG9aj.jpg",
-      "voteAverage": 6.824,
-      "genreIds": [
-        28,
         12,
-        35
+        35,
+        878
       ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:27:52.519Z"
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:26:02.644Z"
     },
     {
-      "id": 385128,
+      "id": 165,
       "mediaType": "movie",
-      "title": "F9",
-      "year": "2021",
-      "overview": "Dominic Toretto and his crew battle the most skilled assassin and high-performance driver they've ever encountered: his forsaken brother.",
-      "posterPath": "/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg",
-      "backdropPath": "/xXHZeb1yhJvnSHPzZDqee0zfMb6.jpg",
-      "voteAverage": 6.987,
+      "title": "Back to the Future Part II",
+      "year": "1989",
+      "overview": "Marty and Doc are at it again as the time-traveling duo head to 2015 to nip some McFly family woes in the bud. But things go awry thanks to bully Biff Tannen and a pesky sports almanac. In a last-ditch attempt to set things straight, Marty finds himself bound for 1955 and face to face with his teenage parents -- again.",
+      "posterPath": "/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg",
+      "backdropPath": "/w6tPctxWAsHoQXeKxxNOT6lYKpx.jpg",
+      "voteAverage": 7.785,
       "genreIds": [
-        28,
         12,
-        80
+        35,
+        878
       ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:28:01.486Z"
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:26:08.267Z"
     },
     {
-      "id": 385687,
+      "id": 196,
       "mediaType": "movie",
-      "title": "Fast X",
-      "year": "2023",
-      "overview": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
-      "posterPath": "/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
-      "backdropPath": "/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
-      "voteAverage": 6.984,
+      "title": "Back to the Future Part III",
+      "year": "1990",
+      "overview": "The final installment finds Marty digging the trusty DeLorean out of a mineshaft and looking for Doc in the Wild West of 1885. But when their time machine breaks down, the travelers are stranded in a land of spurs. More problems arise when Doc falls for pretty schoolteacher Clara Clayton, and Marty tangles with Buford Tannen.",
+      "posterPath": "/crzoVQnMzIrRfHtQw0tLBirNfVg.jpg",
+      "backdropPath": "/AtF7TESJEMmImBRUj9Z7HmW2ZH0.jpg",
+      "voteAverage": 7.496,
       "genreIds": [
-        28,
-        80,
-        53
+        12,
+        35,
+        878
       ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:28:13.651Z"
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:26:14.243Z"
     },
     {
-      "id": 550,
+      "id": 808,
       "mediaType": "movie",
-      "title": "Fight Club",
-      "year": "1999",
-      "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
-      "posterPath": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
-      "backdropPath": "/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
-      "voteAverage": 8.437,
+      "title": "Shrek",
+      "year": "2001",
+      "overview": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.",
+      "posterPath": "/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg",
+      "backdropPath": "/sRvXNDItGlWCqtO3j6wks52FmbD.jpg",
+      "voteAverage": 7.776,
       "genreIds": [
-        18,
-        53
+        16,
+        35,
+        14,
+        12,
+        10751
       ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:30:10.117Z"
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T21:33:09.404Z"
     }
   ],
   "currentlyWatching": [],
-  "watched": [
-    {
-      "id": 9799,
-      "mediaType": "movie",
-      "title": "The Fast and the Furious",
-      "year": "2001",
-      "overview": "Dominic Toretto is a Los Angeles street racer suspected of masterminding a series of big-rig hijackings. When undercover cop Brian O'Conner infiltrates Toretto's iconoclastic crew, he falls for Toretto's sister and must choose a side: the gang or the LAPD.",
-      "posterPath": "/gqY0ITBgT7A82poL9jv851qdnIb.jpg",
-      "backdropPath": "/jY9ef5nqY4xIIMu3yzW3qamUCoi.jpg",
-      "voteAverage": 7,
-      "genreIds": [
-        28,
-        80,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:23:23.684Z"
-    },
-    {
-      "id": 584,
-      "mediaType": "movie",
-      "title": "2 Fast 2 Furious",
-      "year": "2003",
-      "overview": "It's a major double-cross when former police officer Brian O'Conner teams up with his ex-con buddy Roman Pearce to transport a shipment of \"dirty\" money for shady Miami-based import-export dealer Carter Verone. But the guys are actually working with undercover agent Monica Fuentes to bring Verone down.",
-      "posterPath": "/6nDZExrDKIXvSAghsFKVFRVJuSf.jpg",
-      "backdropPath": "/90ooE5SbUEO0OVJHewNO7pgySb6.jpg",
-      "voteAverage": 6.521,
-      "genreIds": [
-        28,
-        80,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:24:05.576Z"
-    },
-    {
-      "id": 9615,
-      "mediaType": "movie",
-      "title": "The Fast and the Furious: Tokyo Drift",
-      "year": "2006",
-      "overview": "In order to avoid a jail sentence, Sean Boswell heads to Tokyo to live with his military father. In a low-rent section of the city, Sean gets caught up in the underground world of drift racing",
-      "posterPath": "/46xqGOwHbh2TH2avWSw3SMXph4E.jpg",
-      "backdropPath": "/dMARcKLrv0T7kVJ4iQR3vqTTdtT.jpg",
-      "voteAverage": 6.554,
-      "genreIds": [
-        28,
-        80,
-        18,
-        53
-      ],
-      "addedBy": "Timerin",
-      "addedAt": "2026-08-20T21:23:30.618Z"
-    }
-  ]
+  "watched": []
 }
