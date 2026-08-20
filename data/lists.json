@@ -691,6 +691,23 @@
       ],
       "addedBy": "Sushi",
       "addedAt": "2026-08-20T22:03:15.387Z"
+    },
+    {
+      "id": 13597,
+      "mediaType": "movie",
+      "title": "Labyrinth",
+      "year": "1986",
+      "overview": "Frustrated with babysitting on yet another weekend night, Sarah, a teenager with an active imagination, summons the Goblins to take her baby stepbrother away. When little Toby actually disappears, Sarah must follow him into a fantastical world to rescue him from the Goblin King. Guarding his castle is the labyrinth itself, a twisted maze of deception, populated with outrageous characters and unknown dangers.",
+      "posterPath": "/pejayhTVBEL4w8YKSfrhOjjWVlH.jpg",
+      "backdropPath": "/mGkleIuPO2flRyvP8yBcUykSQsp.jpg",
+      "voteAverage": 7.289,
+      "genreIds": [
+        12,
+        10751,
+        14
+      ],
+      "addedBy": "Sushi",
+      "addedAt": "2026-08-20T22:06:49.371Z"
     }
   ],
   "currentlyWatching": [],
