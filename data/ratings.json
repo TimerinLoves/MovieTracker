@@ -30,5 +30,21 @@
       "ratedAt": "2026-08-20T21:35:35.967Z",
       "ratedByName": "Timerin"
     }
+  },
+  "movie-9615": {
+    "slot0": {
+      "scores": {
+        "story": 3,
+        "acting": 4,
+        "visuals": 4,
+        "music": 5,
+        "rewatchability": 4,
+        "pacing": 2,
+        "emotionalImpact": 4
+      },
+      "average": 3.7,
+      "ratedAt": "2026-08-20T21:36:55.908Z",
+      "ratedByName": "Timerin"
+    }
   }
 }
