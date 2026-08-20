@@ -73,6 +73,20 @@
       "average": 3.9,
       "ratedAt": "2026-08-20T21:38:38.624Z",
       "ratedByName": "Sushi"
+    },
+    "slot0": {
+      "scores": {
+        "story": 3,
+        "acting": 4,
+        "visuals": 4,
+        "music": 5,
+        "rewatchability": 4,
+        "pacing": 2,
+        "emotionalImpact": 4
+      },
+      "average": 3.7,
+      "ratedAt": "2026-08-20T21:39:44.407Z",
+      "ratedByName": "Timerin"
     }
   }
 }
