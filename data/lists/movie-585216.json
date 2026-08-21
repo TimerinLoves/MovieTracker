@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787342995893,
+  "item": {
+    "id": 585216,
+    "mediaType": "movie",
+    "title": "Escape Room: Tournament of Champions",
+    "year": "2021",
+    "overview": "Six people unwittingly find themselves locked in another series of escape rooms, slowly uncovering what they have in common to survive... and discovering they've all played the games before.",
+    "posterPath": "/jGYJyPzVgrVV2bgClI9uvEZgVLE.jpg",
+    "backdropPath": "/qo9tN87uTsbXnaAob6aa7U33ayb.jpg",
+    "voteAverage": 6.507,
+    "genreIds": [
+      27,
+      53,
+      9648
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T20:09:55.893Z"
+  }
+}
