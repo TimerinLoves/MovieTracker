@@ -339,9 +339,9 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const refreshFromGitHub = useCallback(async () => {
     const token = getReadToken()
     const [remoteLists, remoteRatings, remotePlans] = await Promise.all([
-      readFolder<ListEntry>('data/lists', token),
-      readFolder<MovieRating>('data/ratings', token),
-      readFolder<WatchPlan>('data/plans', token),
+      readFolder<ListEntry>('lists', token),
+      readFolder<MovieRating>('ratings', token),
+      readFolder<WatchPlan>('plans', token),
     ])
 
     setData((prev) => {
