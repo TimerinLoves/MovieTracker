@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787342992954,
+  "item": {
+    "id": 522681,
+    "mediaType": "movie",
+    "title": "Escape Room",
+    "year": "2019",
+    "overview": "Six strangers find themselves in circumstances beyond their control, and must use their wits to survive.",
+    "posterPath": "/8Ls1tZ6qjGzfGHjBB7ihOnf7f0b.jpg",
+    "backdropPath": "/mWLljCmpqlcYQh7uh51BBMwCZwN.jpg",
+    "voteAverage": 6.542,
+    "genreIds": [
+      27,
+      9648,
+      53
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T20:09:52.955Z"
+  }
+}
