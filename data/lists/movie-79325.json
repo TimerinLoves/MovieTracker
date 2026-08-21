@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787329348406,
+  "item": {
+    "id": 79325,
+    "mediaType": "movie",
+    "title": "Madea Goes to Jail - The Play",
+    "year": "2006",
+    "overview": "Madea returns in another hilarious story in which she gets sent to the big house. But regardless of the circumstances, she gives her trademark advice and wisdom to her friends and family as they learn the importance of letting go, moving on, and forgiveness.",
+    "posterPath": "/kTzOnvfkwcAhjMq6bcezjBcI1cs.jpg",
+    "backdropPath": "/7d9rMHZ6CReOpd6KMVximpCBAeJ.jpg",
+    "voteAverage": 7.6,
+    "genreIds": [
+      35,
+      18
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T16:22:28.407Z"
+  }
+}
