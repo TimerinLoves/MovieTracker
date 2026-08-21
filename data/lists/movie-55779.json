@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 12,
+  "item": {
+    "id": 55779,
+    "mediaType": "movie",
+    "title": "Final Destination 5",
+    "year": "2011",
+    "overview": "Death is just as omnipresent as ever, and is unleashed after one man’s premonition saves a group of coworkers from a terrifying suspension bridge collapse. But this group of unsuspecting souls was never supposed to survive, and, in a terrifying race against time, the ill-fated group frantically tries to discover a way to escape Death’s sinister agenda.",
+    "posterPath": "/Akx1Po4ZLetOWfYJhQf75tbhTtK.jpg",
+    "backdropPath": "/5cG2XcylxUIclQsGPBKTtfoqcBV.jpg",
+    "voteAverage": 6.157,
+    "genreIds": [
+      27,
+      9648
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:18:48.179Z"
+  }
+}

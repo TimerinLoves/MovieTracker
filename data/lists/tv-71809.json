@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 47,
+  "item": {
+    "id": 71809,
+    "mediaType": "tv",
+    "title": "The Dark Crystal: Age of Resistance",
+    "year": "2019",
+    "overview": "Return to the world of Thra, where three Gelfling discover the horrifying secret behind the Skeksis' power and set out to ignite the fires of rebellion and save their world.",
+    "posterPath": "/xnMJ7mBC8Jx4emaj7TE4TU0Qm92.jpg",
+    "backdropPath": "/prDq9t3vxMEDKUNcLwyuWLHGeuM.jpg",
+    "voteAverage": 7.825,
+    "genreIds": [
+      10765,
+      10759,
+      10751
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T22:11:25.801Z"
+  }
+}

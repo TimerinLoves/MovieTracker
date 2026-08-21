@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 18,
+  "item": {
+    "id": 253835,
+    "mediaType": "movie",
+    "title": "Los Bandoleros",
+    "year": "2009",
+    "overview": "The film tells the back story about the characters and events leading up to the explosive oil truck heist in Fast &amp; Furious.",
+    "posterPath": "/6QK7BKiEQ10DwGDasxuPhQNb5Bt.jpg",
+    "backdropPath": "/q4MG2j8a7QEjg3ksd4hFXwBSNPf.jpg",
+    "voteAverage": 6.151,
+    "genreIds": [
+      28,
+      18
+    ],
+    "addedBy": "Timerin",
+    "addedAt": "2026-08-20T21:26:41.331Z"
+  }
+}

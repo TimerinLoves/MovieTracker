@@ -1,0 +1,19 @@
+{
+  "listKey": "wantToWatch",
+  "order": 8,
+  "item": {
+    "id": 9532,
+    "mediaType": "movie",
+    "title": "Final Destination",
+    "year": "2000",
+    "overview": "After a teenager has a terrifying vision of him and his friends dying in a plane crash, he prevents the accident only to have Death hunt them down, one by one.",
+    "posterPath": "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg",
+    "backdropPath": "/7isarjYDEKZ5t1CgcvbuqEUby8P.jpg",
+    "voteAverage": 6.642,
+    "genreIds": [
+      27
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:18:43.307Z"
+  }
+}

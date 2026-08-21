@@ -1,0 +1,19 @@
+{
+  "listKey": "wantToWatch",
+  "order": 6,
+  "item": {
+    "id": 1273221,
+    "mediaType": "movie",
+    "title": "Scary Movie",
+    "year": "2026",
+    "overview": "Twenty-six years after outrunning a suspiciously familiar masked killer, the Core Four are back in the killer's crosshairs and no horror movie IP is safe.",
+    "posterPath": "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg",
+    "backdropPath": "/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
+    "voteAverage": 6.432,
+    "genreIds": [
+      35
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T20:58:20.713Z"
+  }
+}

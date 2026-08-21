@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 40,
+  "item": {
+    "id": 507089,
+    "mediaType": "movie",
+    "title": "Five Nights at Freddy's",
+    "year": "2023",
+    "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+    "posterPath": "/7BpNtNfxuocYEVREzVMO75hso1l.jpg",
+    "backdropPath": "/7NRGAtu8E4343NSKwhkgmVRDINw.jpg",
+    "voteAverage": 7.286,
+    "genreIds": [
+      27,
+      53
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T22:03:12.825Z"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 7,
+  "item": {
+    "id": 9760,
+    "mediaType": "movie",
+    "title": "Epic Movie",
+    "year": "2007",
+    "overview": "When the Pevensie siblings each follow their own path, they find themselves at Willy's Chocolate Factory. Walking through a wardrobe, they discover the world of Gnarnia, ruled by the White Bitch. Meeting up with characters such as Harry Potter and Captain Jack Swallows, the newly reunited family must team up with Aslo, a wise-but-horny lion to stop the White Bitch's army.",
+    "posterPath": "/l0lGJiTzU2Ce6T31DIRWv7I0kaC.jpg",
+    "backdropPath": "/tXVpprSIir1fL1O1sAHeLIOxxuD.jpg",
+    "voteAverage": 3.849,
+    "genreIds": [
+      35,
+      12,
+      14
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:15:17.486Z"
+  }
+}

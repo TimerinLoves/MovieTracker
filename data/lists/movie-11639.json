@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 48,
+  "item": {
+    "id": 11639,
+    "mediaType": "movie",
+    "title": "The Dark Crystal",
+    "year": "1982",
+    "overview": "On another planet in the distant past, a Gelfling embarks on a quest to find the missing shard of a magical crystal and restore order to his world, before the grotesque race of Skeksis find and use the crystal for evil.",
+    "posterPath": "/fZPxRaa6gvCyGCh9Xk5kyPqz7fp.jpg",
+    "backdropPath": "/dlIkuHYT977POygUBGZyOszFUB.jpg",
+    "voteAverage": 7.2,
+    "genreIds": [
+      12,
+      10751,
+      14
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T22:14:12.614Z"
+  }
+}

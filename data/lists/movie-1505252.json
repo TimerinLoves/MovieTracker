@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 15,
+  "item": {
+    "id": 1505252,
+    "mediaType": "movie",
+    "title": "Final Destination 7",
+    "year": "2028",
+    "overview": "The seventh installment in the Final Destination franchise. Plot TBA.",
+    "posterPath": "/pSyFYidTEa9mCyfXy5EWaPK9IxV.jpg",
+    "backdropPath": null,
+    "voteAverage": 0,
+    "genreIds": [
+      27,
+      9648
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:19:23.708Z"
+  }
+}

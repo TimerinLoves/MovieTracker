@@ -1,0 +1,22 @@
+{
+  "listKey": "watched",
+  "order": 2,
+  "item": {
+    "id": 9615,
+    "mediaType": "movie",
+    "title": "The Fast and the Furious: Tokyo Drift",
+    "year": "2006",
+    "overview": "In order to avoid a jail sentence, Sean Boswell heads to Tokyo to live with his military father. In a low-rent section of the city, Sean gets caught up in the underground world of drift racing",
+    "posterPath": "/46xqGOwHbh2TH2avWSw3SMXph4E.jpg",
+    "backdropPath": "/dMARcKLrv0T7kVJ4iQR3vqTTdtT.jpg",
+    "voteAverage": 6.554,
+    "genreIds": [
+      28,
+      80,
+      18,
+      53
+    ],
+    "addedBy": "Timerin",
+    "addedAt": "2026-08-20T21:23:30.618Z"
+  }
+}

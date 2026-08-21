@@ -1,0 +1,23 @@
+{
+  "listKey": "wantToWatch",
+  "order": 33,
+  "item": {
+    "id": 1226863,
+    "mediaType": "movie",
+    "title": "The Super Mario Galaxy Movie",
+    "year": "2026",
+    "overview": "Having thwarted Bowser's previous plot to marry Princess Peach, Mario and Luigi now face a fresh threat in Bowser Jr., who is determined to liberate his father from captivity and restore the family legacy. Alongside companions new and old, the brothers travel across the stars to stop the young heir's crusade.",
+    "posterPath": "/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg",
+    "backdropPath": "/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
+    "voteAverage": 8.242,
+    "genreIds": [
+      10751,
+      35,
+      12,
+      14,
+      16
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:49:45.166Z"
+  }
+}

@@ -75,6 +75,14 @@ export type PlansMap = Record<string, WatchPlan>
 
 export const EMPTY_PLANS: PlansMap = {}
 
+export interface ListEntry {
+  listKey: ListKey
+  order: number
+  item: MediaItem
+}
+
+export type OrderMap = Record<string, number>
+
 export interface AuthConfig {
   version: number
   users: { passwordHash: string }[]

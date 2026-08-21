@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 30,
+  "item": {
+    "id": 718930,
+    "mediaType": "movie",
+    "title": "Bullet Train",
+    "year": "2022",
+    "overview": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+    "posterPath": "/j8szC8OgrejDQjjMKSVXyaAjw3V.jpg",
+    "backdropPath": "/y2Ca1neKke2mGPMaHzlCNDVZqsK.jpg",
+    "voteAverage": 7.409,
+    "genreIds": [
+      28,
+      35,
+      53
+    ],
+    "addedBy": "Timerin",
+    "addedAt": "2026-08-20T21:42:20.399Z"
+  }
+}

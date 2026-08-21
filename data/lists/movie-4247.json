@@ -1,0 +1,19 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1,
+  "item": {
+    "id": 4247,
+    "mediaType": "movie",
+    "title": "Scary Movie",
+    "year": "2000",
+    "overview": "A familiar-looking group of teenagers find themselves being stalked by a more-than-vaguely recognizable masked killer! As the victims begin to pile up and the laughs pile on, none of your favorite scary movies escape the razor-sharp satire of this outrageously funny parody!",
+    "posterPath": "/fVQFPRuw3yWXojYDJvA5EoFjUOY.jpg",
+    "backdropPath": "/m5dA4JZsj78EBTa2D6imWOAebwB.jpg",
+    "voteAverage": 6.427,
+    "genreIds": [
+      35
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T20:58:26.188Z"
+  }
+}

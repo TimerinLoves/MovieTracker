@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 14,
+  "item": {
+    "id": 574475,
+    "mediaType": "movie",
+    "title": "Final Destination Bloodlines",
+    "year": "2025",
+    "overview": "Plagued by a violent recurring nightmare, college student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.",
+    "posterPath": "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg",
+    "backdropPath": "/uIpJPDNFoeX0TVml9smPrs9KUVx.jpg",
+    "voteAverage": 7.032,
+    "genreIds": [
+      27,
+      9648
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:18:39.166Z"
+  }
+}

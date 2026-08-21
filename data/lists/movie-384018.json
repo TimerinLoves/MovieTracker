@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 23,
+  "item": {
+    "id": 384018,
+    "mediaType": "movie",
+    "title": "Fast & Furious Presents: Hobbs & Shaw",
+    "year": "2019",
+    "overview": "Ever since US Diplomatic Security Service Agent Hobbs and lawless outcast Shaw first faced off, they just have traded smack talk and body blows. But when cyber-genetically enhanced anarchist Brixton's ruthless actions threaten the future of humanity, they join forces to defeat him.",
+    "posterPath": "/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg",
+    "backdropPath": "/hpgda6P9GutvdkDX5MUJ92QG9aj.jpg",
+    "voteAverage": 6.824,
+    "genreIds": [
+      28,
+      12,
+      35
+    ],
+    "addedBy": "Timerin",
+    "addedAt": "2026-08-20T21:27:52.519Z"
+  }
+}

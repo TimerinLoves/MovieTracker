@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 38,
+  "item": {
+    "id": 512200,
+    "mediaType": "movie",
+    "title": "Jumanji: The Next Level",
+    "year": "2019",
+    "overview": "As the gang return to Jumanji to rescue one of their own, they discover that nothing is as they expect. The players will have to brave parts unknown and unexplored in order to escape the world’s most dangerous game.",
+    "posterPath": "/jyw8VKYEiM1UDzPB7NsisUgBeJ8.jpg",
+    "backdropPath": "/qgch2rFskIxDMgwrD5lWTaB4nBl.jpg",
+    "voteAverage": 6.87,
+    "genreIds": [
+      12,
+      35,
+      14
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:52:05.064Z"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 11,
+  "item": {
+    "id": 19912,
+    "mediaType": "movie",
+    "title": "The Final Destination",
+    "year": "2009",
+    "overview": "A horrifying premonition saves a young man and his friends from death during a racetrack accident but terrible fates await them nonetheless.",
+    "posterPath": "/5vxXrr1MqGsT4NNeRITpfDnl4Rq.jpg",
+    "backdropPath": "/vMaKc5PwdKIIBt5q7JQjfgyESYT.jpg",
+    "voteAverage": 5.612,
+    "genreIds": [
+      27,
+      9648
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:19:18.501Z"
+  }
+}

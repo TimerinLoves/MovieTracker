@@ -24,6 +24,7 @@ interface AuthContextValue {
   login: (key: string, displayName: string) => Promise<LoginResult>
   logout: () => void
   getGitHubToken: () => string | null
+  getReadToken: () => string | null
   saveGitHubToken: (token: string) => Promise<boolean>
   unlockGitHubToken: (key?: string) => Promise<boolean>
 }
@@ -134,6 +135,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [session, passwordRef],
   )
 
+  // The shared build token (if embedded) gives read access without a login, so
+  // anonymous viewers don't hit the unauthenticated API rate limit. Writes
+  // still require an actual login via getGitHubToken().
+  const getReadToken = useCallback(() => buildToken ?? null, [buildToken])
+
   const getGitHubToken = useCallback(() => {
     // Per-user stored token wins; otherwise fall back to the shared build token
     // so any logged-in user can sync without storing a token on this device.
@@ -151,10 +157,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       login,
       logout,
       getGitHubToken,
+      getReadToken,
       saveGitHubToken,
       unlockGitHubToken,
     }),
-    [ready, session, buildToken, authConfig, login, logout, getGitHubToken, saveGitHubToken, unlockGitHubToken],
+    [ready, session, buildToken, authConfig, login, logout, getGitHubToken, getReadToken, saveGitHubToken, unlockGitHubToken],
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

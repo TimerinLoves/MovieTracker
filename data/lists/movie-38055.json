@@ -1,0 +1,23 @@
+{
+  "listKey": "wantToWatch",
+  "order": 27,
+  "item": {
+    "id": 38055,
+    "mediaType": "movie",
+    "title": "Megamind",
+    "year": "2010",
+    "overview": "After Megamind, a highly intelligent alien supervillain, defeats his long-time nemesis Metro Man, Megamind creates a new hero to fight, but must act to save the city when his \"creation\" becomes an even worse villain than he was.",
+    "posterPath": "/uZ9ytt3sPTx62XTfN56ILSuYWRe.jpg",
+    "backdropPath": "/irpJXGiVr539uuspcQcNdkhS2lq.jpg",
+    "voteAverage": 7.035,
+    "genreIds": [
+      16,
+      28,
+      35,
+      10751,
+      878
+    ],
+    "addedBy": "Timerin",
+    "addedAt": "2026-08-20T21:34:17.185Z"
+  }
+}

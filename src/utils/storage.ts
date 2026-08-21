@@ -1,4 +1,4 @@
-import type { Lists, PlansMap, RatingsMap, SessionData } from '../types'
+import type { Lists, OrderMap, PlansMap, RatingsMap, SessionData } from '../types'
 import { EMPTY_PLANS, EMPTY_LISTS } from '../types'
 
 const PREFIX = 'mt:'
@@ -110,6 +110,21 @@ export function loadPlansCache(): PlansMap {
 
 export function savePlansCache(plans: PlansMap): void {
   set('cache.plans', JSON.stringify(plans))
+}
+
+// ---- per-list ordering (offline fallback) ----
+export function loadOrdersCache(): OrderMap {
+  const raw = get('cache.orders')
+  if (!raw) return {}
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return {}
+  }
+}
+
+export function saveOrdersCache(orders: OrderMap): void {
+  set('cache.orders', JSON.stringify(orders))
 }
 
 // ---- misc ----

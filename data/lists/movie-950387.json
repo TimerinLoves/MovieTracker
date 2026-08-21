@@ -1,0 +1,22 @@
+{
+  "listKey": "wantToWatch",
+  "order": 34,
+  "item": {
+    "id": 950387,
+    "mediaType": "movie",
+    "title": "A Minecraft Movie",
+    "year": "2025",
+    "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
+    "posterPath": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
+    "backdropPath": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+    "voteAverage": 6.233,
+    "genreIds": [
+      10751,
+      14,
+      35,
+      12
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:49:53.886Z"
+  }
+}

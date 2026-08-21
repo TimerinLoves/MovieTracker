@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 39,
+  "item": {
+    "id": 6795,
+    "mediaType": "movie",
+    "title": "Zathura: A Space Adventure",
+    "year": "2005",
+    "overview": "After their father is called into work, two young boys, Walter and Danny, are left in the care of their teenage sister, Lisa, and told they must stay inside. Walter and Danny, who anticipate a boring day, are shocked when they begin playing Zathura, a space-themed board game, which they realize has mystical powers when their house is shot into space. With the help of an astronaut, the boys attempt to return home.",
+    "posterPath": "/gDb5BW2NLqZ9cvg9nyzkZVvmgze.jpg",
+    "backdropPath": "/s9Bn7Mx4U9cWOR1WdFZjU1DTAkh.jpg",
+    "voteAverage": 6.45,
+    "genreIds": [
+      878,
+      12,
+      10751
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-20T21:57:09.532Z"
+  }
+}

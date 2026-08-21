@@ -115,13 +115,8 @@ export async function readJsonFile<T>(path: string, token?: string | null): Prom
   return null
 }
 
-/**
- * Writes a JSON object to the repo via the contents API. Requires a token with
- * "Contents: Read and Write" on the target repo. Refetches the file sha and
- * retries on the normal concurrent-edit conflict (409) instead of dropping
- * the update.
- */
-export async function writeJsonFile(path: string, data: unknown, token: string, message?: string): Promise<boolean> {
+/** Core PUT that creates or updates a file, retrying on the 409 conflict. */
+async function putContents(path: string, data: unknown, token: string, message?: string): Promise<boolean> {
   const repo = getRepo()
   if (!repo) return false
 
@@ -156,4 +151,96 @@ export async function writeJsonFile(path: string, data: unknown, token: string, 
     return false
   }
   return false
+}
+
+/**
+ * Writes a JSON object to the repo via the contents API. Requires a token with
+ * "Contents: Read and Write" on the target repo. Refetches the file sha and
+ * retries on the normal concurrent-edit conflict (409) instead of dropping
+ * the update.
+ */
+export async function writeJsonFile(path: string, data: unknown, token: string, message?: string): Promise<boolean> {
+  const repo = getRepo()
+  if (!repo) return false
+  return putContents(path, data, token, message)
+}
+
+/** Deletes a file from the repo. Safe to call when it may not exist. */
+export async function deleteRepoFile(folder: string, key: string, token: string, message?: string): Promise<boolean> {
+  const repo = getRepo()
+  if (!repo) return false
+
+  const path = `data/${folder}/${key}.json`
+  const branch = (await resolveDefaultBranch(token)) ?? 'main'
+  const url = `/repos/${repo.owner}/${repo.repo}/contents/${path}`
+
+  let sha: string | undefined
+  const readRes = await apiFetch(url, token)
+  if (readRes.status === 404) return true // already gone
+  if (readRes.ok) {
+    const existing = (await readRes.json()) as ContentsResponse
+    sha = existing.sha
+  }
+
+  const res = await apiFetch(url, token, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: message ?? `Delete ${path}`, sha, branch }),
+  })
+  return res.ok || res.status === 404
+}
+
+/** Lists the .json files inside a data subfolder (returns name without extension + path + sha). */
+export async function listFolder(
+  folder: string,
+  token?: string | null,
+): Promise<{ name: string; path: string; sha: string }[]> {
+  const repo = getRepo()
+  if (!repo) return []
+  const res = await apiFetch(`/repos/${repo.owner}/${repo.repo}/contents/data/${folder}`, token ?? null)
+  if (res.status === 404) return []
+  if (!res.ok) return []
+  const entries = (await res.json()) as { name: string; path: string; sha: string; type: string }[]
+  return entries
+    .filter((e) => e.type === 'file' && e.name.endsWith('.json') && e.name !== 'index.json')
+    .map((e) => ({ name: e.name.replace(/\.json$/, ''), path: e.path, sha: e.sha }))
+}
+
+/**
+ * Reads a whole data subfolder into a keyed map. Each file is
+ * `data/<folder>/<key>.json`. Returns an empty map when the folder is absent.
+ * All file contents are fetched in parallel.
+ */
+export async function readFolder<T>(folder: string, token?: string | null): Promise<Record<string, T>> {
+  const repo = getRepo()
+  if (!repo) return {}
+  const entries = await listFolder(folder, token)
+  const out: Record<string, T> = {}
+  await Promise.all(
+    entries.map(async (e) => {
+      const res = await apiFetch(`/repos/${repo.owner}/${repo.repo}/contents/${e.path}`, token ?? null)
+      if (!res.ok) return
+      const data = (await res.json()) as ContentsResponse
+      if (!data.content || data.encoding !== 'base64') return
+      try {
+        out[e.name] = JSON.parse(base64Decode(data.content)) as T
+      } catch {
+        // skip malformed file
+      }
+    }),
+  )
+  return out
+}
+
+/** Writes a single entry file: `data/<folder>/<key>.json`. */
+export async function writeRepoFile(
+  folder: string,
+  key: string,
+  data: unknown,
+  token: string,
+  message?: string,
+): Promise<boolean> {
+  const repo = getRepo()
+  if (!repo) return false
+  return putContents(`data/${folder}/${key}.json`, data, token, message)
 }
