@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787310742431,
+  "item": {
+    "id": 338967,
+    "mediaType": "movie",
+    "title": "Zombieland: Double Tap",
+    "year": "2019",
+    "overview": "Columbus, Tallahassee, Wichita, and Little Rock move to the American heartland as they face off against evolved zombies, fellow survivors, and the growing pains of the snarky makeshift family.",
+    "posterPath": "/dtRbVsUb5O12WWO54SRpiMtHKC0.jpg",
+    "backdropPath": "/e7tMI0zVKJB2TS74TaBifIZIkCp.jpg",
+    "voteAverage": 6.891,
+    "genreIds": [
+      27,
+      35
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T11:12:22.432Z"
+  }
+}
