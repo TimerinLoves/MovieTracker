@@ -1,0 +1,21 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787310420084,
+  "item": {
+    "id": 447404,
+    "mediaType": "movie",
+    "title": "Pokémon Detective Pikachu",
+    "year": "2019",
+    "overview": "In a world where people collect pocket-size monsters (Pokémon) to do battle, a boy comes across an intelligent monster who seeks to be a detective.",
+    "posterPath": "/uhWvnFgg3BNlcUz0Re1HfQqIcCD.jpg",
+    "backdropPath": "/yXybBEC45p84D0Ky7GmQQYrclVr.jpg",
+    "voteAverage": 6.899,
+    "genreIds": [
+      28,
+      12,
+      14
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T11:07:00.084Z"
+  }
+}
