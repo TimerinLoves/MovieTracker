@@ -8,12 +8,15 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "set-passwords": "node scripts/set-passwords.mjs"
+    "set-passwords": "node scripts/set-passwords.mjs",
+    "migrate:firestore": "node scripts/migrate-to-firestore.mjs",
+    "setup:firebase": "node scripts/setup-firebase.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "firebase": "^11.10.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -22,6 +25,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "firebase-admin": "^13.10.0",
     "oxlint": "^1.75.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",

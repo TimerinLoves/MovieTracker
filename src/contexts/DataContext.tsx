@@ -1,10 +1,12 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import { averageCategoryScores } from '../constants'
-import type { CategoryScores, ListEntry, ListKey, Lists, MediaItem, MovieRating, OrderMap, PlansMap, RatingsMap, UserRating, WatchPlan } from '../types'
+import type { CategoryScores, ListEntry, ListKey, Lists, MediaItem, OrderMap, PlansMap, RatingsMap, UserRating, WatchPlan } from '../types'
 import { LIST_KEYS } from '../types'
-import { getRepo, readFolder, writeRepoFile, deleteRepoFile } from '../utils/github'
+import { getRepo } from '../utils/github'
 import { loadListsCache, loadOrdersCache, loadPlansCache, loadRatingsCache, saveListsCache, saveOrdersCache, savePlansCache, saveRatingsCache } from '../utils/storage'
+import { firebaseEnabled } from '../firebase/config'
+import { createBackend, type DataBackend } from '../firebase/backend'
 import { useAuth } from './AuthContext'
 
 export type SyncState = 'loading' | 'idle' | 'syncing' | 'offline'
@@ -31,7 +33,7 @@ interface DataContextValue {
   removeMyRating: (mediaKey: string) => void
   planItem: (mediaKey: string, plan: WatchPlan) => void
   unplanItem: (mediaKey: string) => void
-  refreshFromGitHub: () => Promise<void>
+  refresh: () => Promise<void>
 }
 
 const keyOf = (item: MediaItem) => `${item.mediaType}-${item.id}`
@@ -39,11 +41,12 @@ const keyOf = (item: MediaItem) => `${item.mediaType}-${item.id}`
 const DataContext = createContext<DataContextValue | null>(null)
 
 export function DataProvider({ children }: { children: ReactNode }) {
-  const { session, getGitHubToken, getReadToken } = useAuth()
+  const { session, getGitHubToken } = useAuth()
+  const backend: DataBackend = useMemo(() => createBackend(getGitHubToken), [getGitHubToken])
+
   const [data, setData] = useState<DataState>(() => {
     const lists = loadListsCache()
     const orders = loadOrdersCache()
-    // Seed orders from current list positions when missing.
     for (const listKey of LIST_KEYS) {
       lists[listKey].forEach((m, i) => {
         const k = keyOf(m)
@@ -60,8 +63,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [syncing, setSyncing] = useState(false)
   const [syncReason, setSyncReason] = useState<string | null>(null)
 
-  const repoConfigured = getRepo() !== null
-  const syncState: SyncState = syncing ? 'syncing' : repoConfigured ? 'idle' : 'offline'
+  const remoteConfigured = firebaseEnabled || getRepo() !== null
+  const syncState: SyncState = syncing ? 'syncing' : remoteConfigured ? 'idle' : 'offline'
 
   const persistCache = useCallback((next: DataState) => {
     saveListsCache(next.lists)
@@ -70,8 +73,6 @@ export function DataProvider({ children }: { children: ReactNode }) {
     saveOrdersCache(next.orders)
   }, [])
 
-  // Local-only state update + offline cache. GitHub writes are done per-change
-  // in each action so individual edits never clobber each other.
   const mutate = useCallback(
     (updater: (prev: DataState) => DataState) => {
       setData((prev) => {
@@ -84,53 +85,32 @@ export function DataProvider({ children }: { children: ReactNode }) {
     [persistCache],
   )
 
-  const syncWrite = useCallback(
-    (folder: string, key: string, payload: unknown, message: string) => {
-      const token = getGitHubToken()
-      if (!repoConfigured || !token) {
-        if (!repoConfigured) setSyncReason('GitHub repo not configured - data stays in this browser for now.')
-        return
-      }
-      setSyncing(true)
-      writeRepoFile(folder, key, payload, token, message)
-        .then((ok) => setSyncReason(ok ? null : 'Failed to sync to GitHub.'))
-        .catch(() => setSyncReason('Failed to sync to GitHub.'))
-        .finally(() => setSyncing(false))
-    },
-    [repoConfigured, getGitHubToken],
-  )
-
-  const syncDelete = useCallback(
-    (folder: string, key: string, message: string) => {
-      const token = getGitHubToken()
-      if (!repoConfigured || !token) return
-      setSyncing(true)
-      deleteRepoFile(folder, key, token, message)
-        .then((ok) => setSyncReason(ok ? null : 'Failed to sync to GitHub.'))
-        .catch(() => setSyncReason('Failed to sync to GitHub.'))
-        .finally(() => setSyncing(false))
-    },
-    [repoConfigured, getGitHubToken],
-  )
+  // Fire-and-forget backend write that also drives the sync indicator.
+  const runWrite = useCallback((p: Promise<void>) => {
+    setSyncing(true)
+    p.then(() => setSyncReason(null))
+      .catch(() => setSyncReason('Sync failed.'))
+      .finally(() => setSyncing(false))
+  }, [])
 
   const addToList = useCallback(
     (item: MediaItem, listKey: ListKey) => {
       const key = keyOf(item)
       const order = Date.now()
-      const name = session?.displayName ?? 'unknown'
+      const stamped: MediaItem = { ...item, addedBy: session?.displayName, addedAt: new Date().toISOString() }
       mutate((prev) => {
         const exists = LIST_KEYS.some((k) => prev.lists[k].some((m) => m.id === item.id && m.mediaType === item.mediaType))
         if (exists) return prev
-        const stamped: MediaItem = { ...item, addedBy: session?.displayName, addedAt: new Date().toISOString() }
         return {
           ...prev,
           orders: { ...prev.orders, [key]: order },
           lists: { ...prev.lists, [listKey]: [...prev.lists[listKey], stamped] },
         }
       })
-      syncWrite('lists', key, { listKey, order, item: { ...item, addedBy: session?.displayName, addedAt: new Date().toISOString() } } as ListEntry, `Add to ${listKey} [${name}]`)
+      const entry: ListEntry = { listKey, order, item: stamped }
+      runWrite(backend.writeList(key, entry))
     },
-    [mutate, session, syncWrite],
+    [mutate, session, backend, runWrite],
   )
 
   const removeFromList = useCallback(
@@ -138,7 +118,6 @@ export function DataProvider({ children }: { children: ReactNode }) {
       const item = data.lists[listKey].find((m) => m.id === id)
       if (!item) return
       const key = keyOf(item)
-      const name = session?.displayName ?? 'unknown'
       mutate((prev) => {
         const { [key]: _removed, ...rest } = prev.orders
         return {
@@ -147,9 +126,9 @@ export function DataProvider({ children }: { children: ReactNode }) {
           lists: { ...prev.lists, [listKey]: prev.lists[listKey].filter((m) => m.id !== id) },
         }
       })
-      syncDelete('lists', key, `Remove from ${listKey} [${name}]`)
+      runWrite(backend.deleteList(key))
     },
-    [mutate, data.lists, session, syncDelete],
+    [mutate, data.lists, backend, runWrite],
   )
 
   const computeOrder = (toKey: ListKey, overId?: number): number => {
@@ -174,7 +153,6 @@ export function DataProvider({ children }: { children: ReactNode }) {
       if (!item) return
       const key = keyOf(item)
       const order = computeOrder(toKey, overId)
-      const name = session?.displayName ?? 'unknown'
       const wasPlan = key in data.plans
       mutate((prev) => {
         const source = prev.lists[fromKey].filter((m) => m.id !== id)
@@ -194,10 +172,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         target.push(item)
         return { ...prev, orders: { ...prev.orders, [key]: order }, plans, lists: { ...prev.lists, [fromKey]: source, [toKey]: target } }
       })
-      syncWrite('lists', key, { listKey: toKey, order, item } as ListEntry, `Move to ${toKey} [${name}]`)
-      if (fromKey === 'wantToWatch' && wasPlan) syncDelete('plans', key, `Remove plan (moved to ${toKey}) [${name}]`)
+      runWrite(backend.writeList(key, { listKey: toKey, order, item }))
+      if (fromKey === 'wantToWatch' && wasPlan) runWrite(backend.deletePlan(key))
     },
-    [mutate, data.lists, data.plans, data.orders, session, syncWrite, syncDelete],
+    [mutate, data.lists, data.plans, data.orders, backend, runWrite],
   )
 
   const reorderWithin = useCallback(
@@ -216,9 +194,9 @@ export function DataProvider({ children }: { children: ReactNode }) {
         items.splice(toIdx, 0, moved)
         return { ...prev, orders: { ...prev.orders, [key]: order }, lists: { ...prev.lists, [listKey]: items } }
       })
-      syncWrite('lists', key, { listKey, order, item } as ListEntry, `Reorder in ${listKey} [${session?.displayName ?? 'unknown'}]`)
+      runWrite(backend.writeList(key, { listKey, order, item }))
     },
-    [mutate, data.lists, data.orders, session, syncWrite],
+    [mutate, data.lists, data.orders, backend, runWrite],
   )
 
   const rateItem = useCallback(
@@ -231,15 +209,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
         ratedAt: new Date().toISOString(),
         ratedByName: session.displayName,
       }
-      const existing = data.ratings[mediaKey] ?? {}
-      const nextRating = { ...existing, [slotKey]: rating }
+      const nextRating = { ...(data.ratings[mediaKey] ?? {}), [slotKey]: rating }
       mutate((prev) => {
         const cur = prev.ratings[mediaKey] ?? {}
         return { ...prev, ratings: { ...prev.ratings, [mediaKey]: { ...cur, [slotKey]: rating } } }
       })
-      syncWrite('ratings', mediaKey, nextRating, `Rate ${mediaKey} [${session.displayName}]`)
+      runWrite(backend.writeRating(mediaKey, nextRating))
     },
-    [mutate, data.ratings, session, syncWrite],
+    [mutate, data.ratings, session, backend, runWrite],
   )
 
   const removeMyRating = useCallback(
@@ -255,19 +232,18 @@ export function DataProvider({ children }: { children: ReactNode }) {
         const { [slotKey]: _r, ...restNext } = cur
         return { ...prev, ratings: { ...prev.ratings, [mediaKey]: restNext } }
       })
-      const name = session.displayName
-      if (Object.keys(rest).length === 0) syncDelete('ratings', mediaKey, `Remove rating ${mediaKey} [${name}]`)
-      else syncWrite('ratings', mediaKey, rest, `Update rating ${mediaKey} [${name}]`)
+      if (Object.keys(rest).length === 0) runWrite(backend.deleteRating(mediaKey))
+      else runWrite(backend.writeRating(mediaKey, rest))
     },
-    [mutate, data.ratings, session, syncWrite, syncDelete],
+    [mutate, data.ratings, session, backend, runWrite],
   )
 
   const planItem = useCallback(
     (mediaKey: string, plan: WatchPlan) => {
       mutate((prev) => ({ ...prev, plans: { ...prev.plans, [mediaKey]: plan } }))
-      syncWrite('plans', mediaKey, plan, `Plan ${mediaKey} [${session?.displayName ?? 'unknown'}]`)
+      runWrite(backend.writePlan(mediaKey, plan))
     },
-    [mutate, session, syncWrite],
+    [mutate, backend, runWrite],
   )
 
   const unplanItem = useCallback(
@@ -278,9 +254,9 @@ export function DataProvider({ children }: { children: ReactNode }) {
         const { [mediaKey]: _removed, ...rest } = prev.plans
         return { ...prev, plans: rest }
       })
-      syncDelete('plans', mediaKey, `Unplan ${mediaKey} [${session?.displayName ?? 'unknown'}]`)
+      runWrite(backend.deletePlan(mediaKey))
     },
-    [mutate, data.plans, session, syncDelete],
+    [mutate, data.plans, backend, runWrite],
   )
 
   const advanceDuePlans = useCallback(() => {
@@ -303,7 +279,6 @@ export function DataProvider({ children }: { children: ReactNode }) {
     }
     if (moved.length === 0) return
 
-    const name = session?.displayName ?? 'unknown'
     mutate((prev) => {
       let plans = prev.plans
       for (const key of dueKeys) {
@@ -324,54 +299,39 @@ export function DataProvider({ children }: { children: ReactNode }) {
     })
     for (const item of moved) {
       const key = keyOf(item)
-      syncWrite('lists', key, { listKey: 'currentlyWatching', order: Date.now(), item } as ListEntry, `Auto-advance ${key} [${name}]`)
-      syncDelete('plans', key, `Auto-advance plan ${key} [${name}]`)
+      runWrite(backend.writeList(key, { listKey: 'currentlyWatching', order: Date.now(), item }))
+      runWrite(backend.deletePlan(key))
     }
-  }, [mutate, data.lists.wantToWatch, data.plans, session, syncWrite, syncDelete])
+  }, [mutate, data.lists.wantToWatch, data.plans, backend, runWrite])
 
-  // Roll due scheduled watches into "currently watching" (never past that).
   useEffect(() => {
     advanceDuePlans()
     const id = window.setInterval(advanceDuePlans, 30_000)
     return () => window.clearInterval(id)
   }, [advanceDuePlans])
 
-  const refreshFromGitHub = useCallback(async () => {
-    const token = getReadToken()
-    const [remoteLists, remoteRatings, remotePlans] = await Promise.all([
-      readFolder<ListEntry>('lists', token),
-      readFolder<MovieRating>('ratings', token),
-      readFolder<WatchPlan>('plans', token),
-    ])
-
-    setData((prev) => {
-      const orders: OrderMap = { ...prev.orders }
-      const lists: Lists = { wantToWatch: [], currentlyWatching: [], watched: [] }
-
-      for (const [key, entry] of Object.entries(remoteLists)) {
-        const listKey = LIST_KEYS.includes(entry.listKey) ? entry.listKey : 'wantToWatch'
-        lists[listKey].push(entry.item)
-        if (entry.order != null) orders[key] = entry.order
-      }
-      for (const listKey of LIST_KEYS) {
-        lists[listKey].forEach((m, i) => {
-          const k = keyOf(m)
-          if (!(k in orders)) orders[k] = i
-        })
-        lists[listKey].sort((a, b) => (orders[keyOf(a)] ?? 0) - (orders[keyOf(b)] ?? 0))
-      }
-
-      const ratings = remoteRatings ?? prev.ratings
-      const plans = remotePlans ?? prev.plans
-      const next: DataState = { lists, ratings, plans, orders }
-      persistCache(next)
-      return next
-    })
-  }, [getReadToken, persistCache])
-
+  // Subscribe to the active backend (Firestore when configured, else GitHub).
   useEffect(() => {
-    refreshFromGitHub()
-  }, [refreshFromGitHub])
+    const unsub = backend.start((remote) => {
+      setData((prev) => {
+        const orders: OrderMap = { ...prev.orders }
+        for (const listKey of LIST_KEYS) {
+          remote.lists[listKey].forEach((m, i) => {
+            const k = keyOf(m)
+            if (!(k in orders)) orders[k] = i
+          })
+        }
+        const next: DataState = { lists: remote.lists, ratings: remote.ratings, plans: remote.plans, orders }
+        persistCache(next)
+        return next
+      })
+    })
+    return unsub
+  }, [backend, persistCache])
+
+  const refresh = useCallback(async () => {
+    await backend.refresh()
+  }, [backend])
 
   const value = useMemo<DataContextValue>(
     () => ({
@@ -380,7 +340,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       plans: data.plans,
       syncState,
       syncReason,
-      repoConfigured,
+      repoConfigured: remoteConfigured,
       addToList,
       removeFromList,
       moveToList,
@@ -389,13 +349,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
       removeMyRating,
       planItem,
       unplanItem,
-      refreshFromGitHub,
+      refresh,
     }),
     [
       data,
       syncState,
       syncReason,
-      repoConfigured,
+      remoteConfigured,
       addToList,
       removeFromList,
       moveToList,
@@ -404,7 +364,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       removeMyRating,
       planItem,
       unplanItem,
-      refreshFromGitHub,
+      refresh,
     ],
   )
 

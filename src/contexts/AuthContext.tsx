@@ -4,6 +4,8 @@ import type { AuthConfig, SessionData } from '../types'
 import bundledAuthConfig from '../../auth-config.json'
 import { decryptWithPassword, encryptWithPassword, sha256Hex } from '../utils/crypto'
 import { readJsonFile } from '../utils/github'
+import { getAuthInstance, slotEmail } from '../firebase/config'
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import {
   clearSession,
   loadEncryptedGitHubToken,
@@ -76,6 +78,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!key.trim()) return { ok: false, error: 'Enter your access key.' }
       if (!displayName.trim()) return { ok: false, error: 'Enter a display name.' }
 
+      // Primary path: sign in to Firebase Auth. The access key is the account
+      // password; we try both slot accounts (order doesn't matter) and let
+      // Firebase verify it for real. No Cloud Function needed, so this stays on
+      // the free Spark plan. Falls back to the bundled client-side check when
+      // Firebase isn't configured.
+      const auth = getAuthInstance()
+      if (auth) {
+        let usedSlot = -1
+        for (const i of [0, 1]) {
+          const email = slotEmail(i)
+          if (!email) continue
+          try {
+            await signInWithEmailAndPassword(auth, email, key.trim())
+            usedSlot = i
+            break
+          } catch {
+            // wrong slot for this key - try the other one
+          }
+        }
+        if (usedSlot < 0) return { ok: false, error: 'That access key is not recognized.' }
+        const newSession: SessionData = {
+          slotId: usedSlot,
+          displayName: displayName.trim(),
+          loggedInAt: new Date().toISOString(),
+        }
+        setSession(newSession)
+        saveSession(newSession)
+        return { ok: true, slotId: usedSlot, displayName: newSession.displayName }
+      }
+
       const hash = await sha256Hex(key.trim())
       const index = authConfig.users.findIndex((u) => u.passwordHash && u.passwordHash.toLowerCase() === hash)
       if (index < 0) return { ok: false, error: 'That access key is not recognized.' }
@@ -100,6 +132,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   )
 
   const logout = useCallback(() => {
+    const auth = getAuthInstance()
+    if (auth) void signOut(auth).catch(() => {})
     passwordRef.current = null
     setGitToken(null)
     setSession(null)

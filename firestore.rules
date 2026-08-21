@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public reads: anyone (even logged-out viewers) can see the lists.
+    // Writes are gated to signed-in app users (the Cloud Function mints a token
+    // carrying the appUser claim after verifying the access key server-side).
+    match /{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

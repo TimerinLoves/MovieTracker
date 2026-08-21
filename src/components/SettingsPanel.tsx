@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useData } from '../contexts/DataContext'
 import { useTheme } from '../contexts/ThemeContext'
 import { useToast } from '../contexts/ToastContext'
+import { firebaseEnabled } from '../firebase/config'
 import Modal from './Modal'
 import LoginModal from './LoginModal'
 
@@ -13,7 +14,7 @@ interface SettingsPanelProps {
 export default function SettingsPanel({ onClose }: SettingsPanelProps) {
   const { session, logout, saveGitHubToken, unlockGitHubToken, tokenUnlocked, sharedTokenReady } = useAuth()
   const { themes, themeId, setTheme } = useTheme()
-  const { syncState, syncReason, repoConfigured, refreshFromGitHub } = useData()
+  const { syncState, syncReason, repoConfigured, refresh } = useData()
   const { pushToast } = useToast()
 
   const [showLogin, setShowLogin] = useState(false)
@@ -23,6 +24,10 @@ export default function SettingsPanel({ onClose }: SettingsPanelProps) {
   const [notice, setNotice] = useState<string | null>(null)
 
   const syncLabel = useMemo(() => {
+    if (firebaseEnabled) {
+      if (syncState === 'syncing') return 'Saving...'
+      return 'Live sync (Firebase)'
+    }
     if (syncState === 'syncing') return 'Syncing to GitHub...'
     if (syncState === 'offline') return repoConfigured ? 'GitHub token locked' : 'GitHub repo not configured'
     if (sharedTokenReady && tokenUnlocked) return 'Synced to GitHub (shared key)'
@@ -121,72 +126,90 @@ export default function SettingsPanel({ onClose }: SettingsPanelProps) {
       </section>
 
       <section className="settings-section">
-        <h3>GitHub sync</h3>
+        <h3>Sync</h3>
         <div className="setting-row">
           <div>
             <div className="setting-value">{syncLabel}</div>
             <div className="setting-hint">
-              {repoConfigured
-                ? 'Data is written to <repo>/data/ on every edit.'
-                : 'No repo configured yet - data stays in this browser. Add the REPO_NAME build secret to enable syncing.'}
+              {firebaseEnabled
+                ? 'Changes save to Firebase and appear on every device instantly.'
+                : 'Data is written to the repo on every edit.'}
             </div>
             {syncReason && <div className="setting-hint setting-warn">{syncReason}</div>}
           </div>
-          <button type="button" className="btn btn-ghost btn-sm" onClick={() => void refreshFromGitHub()}>
-            Re-download
+          <button type="button" className="btn btn-ghost btn-sm" onClick={() => void refresh()}>
+            Refresh
           </button>
         </div>
+      </section>
 
-        {repoConfigured && (
-          <>
-            {!tokenUnlocked ? (
+      {!firebaseEnabled && (
+        <section className="settings-section">
+          <h3>GitHub sync</h3>
+          <div className="setting-row">
+            <div>
+              <div className="setting-value">
+                {repoConfigured ? 'Repo configured' : 'No repo configured'}
+              </div>
+              <div className="setting-hint">
+                {repoConfigured
+                  ? 'Data is written to <repo>/data/ on every edit.'
+                  : 'No repo configured yet - data stays in this browser. Add the REPO_NAME build secret to enable syncing.'}
+              </div>
+            </div>
+          </div>
+
+          {repoConfigured && (
+            <>
+              {!tokenUnlocked ? (
+                <div className="setting-block">
+                  <label className="field-label" htmlFor="settings-key">
+                    Re-enter your access key to unlock the stored token
+                  </label>
+                  <div className="setting-inline">
+                    <input
+                      id="settings-key"
+                      type="password"
+                      className="text-input"
+                      placeholder="Your access key"
+                      value={unlockKey}
+                      onChange={(e) => setUnlockKey(e.target.value)}
+                    />
+                    <button type="button" className="btn btn-accent" onClick={() => void onUnlock()} disabled={saving}>
+                      Unlock
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="setting-value">Token unlocked ✓</div>
+              )}
+
               <div className="setting-block">
-                <label className="field-label" htmlFor="settings-key">
-                  Re-enter your access key to unlock the stored token
+                <label className="field-label" htmlFor="settings-token">
+                  {tokenUnlocked ? 'Replace GitHub token' : 'Save GitHub token (encrypted with your key)'}
                 </label>
                 <div className="setting-inline">
                   <input
-                    id="settings-key"
+                    id="settings-token"
                     type="password"
                     className="text-input"
-                    placeholder="Your access key"
-                    value={unlockKey}
-                    onChange={(e) => setUnlockKey(e.target.value)}
+                    placeholder="github_pat_..."
+                    value={ghToken}
+                    onChange={(e) => setGhToken(e.target.value)}
                   />
-                  <button type="button" className="btn btn-accent" onClick={() => void onUnlock()} disabled={saving}>
-                    Unlock
+                  <button type="button" className="btn btn-accent" onClick={() => void onSaveToken()} disabled={saving}>
+                    Save
                   </button>
                 </div>
+                <div className="setting-hint">
+                  The token is encrypted with your access key and stored only on this device.
+                </div>
               </div>
-            ) : (
-              <div className="setting-value">Token unlocked ✓</div>
-            )}
-
-            <div className="setting-block">
-              <label className="field-label" htmlFor="settings-token">
-                {tokenUnlocked ? 'Replace GitHub token' : 'Save GitHub token (encrypted with your key)'}
-              </label>
-              <div className="setting-inline">
-                <input
-                  id="settings-token"
-                  type="password"
-                  className="text-input"
-                  placeholder="github_pat_..."
-                  value={ghToken}
-                  onChange={(e) => setGhToken(e.target.value)}
-                />
-                <button type="button" className="btn btn-accent" onClick={() => void onSaveToken()} disabled={saving}>
-                  Save
-                </button>
-              </div>
-              <div className="setting-hint">
-                The token is encrypted with your access key and stored only on this device.
-              </div>
-            </div>
-            {notice && <div className="setting-hint setting-warn">{notice}</div>}
-          </>
-        )}
-      </section>
+              {notice && <div className="setting-hint setting-warn">{notice}</div>}
+            </>
+          )}
+        </section>
+      )}
     </Modal>
   )
 }
