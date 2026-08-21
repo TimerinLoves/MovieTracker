@@ -1,0 +1,20 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787329389959,
+  "item": {
+    "id": 380124,
+    "mediaType": "movie",
+    "title": "Boo! A Madea Halloween",
+    "year": "2016",
+    "overview": "Madea winds up in the middle of mayhem when she spends a hilarious, haunted Halloween fending off killers, paranormal poltergeists, ghosts, ghouls, and zombies while keeping a watchful eye on a group of misbehaving teens.",
+    "posterPath": "/82TLEZv1rOJNgllfYD22NkivGDH.jpg",
+    "backdropPath": "/2fC29LRezRnpQwnbjxXSO7dakb.jpg",
+    "voteAverage": 5.799,
+    "genreIds": [
+      35,
+      27
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T16:23:09.960Z"
+  }
+}
