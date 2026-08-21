@@ -1,0 +1,19 @@
+{
+  "listKey": "wantToWatch",
+  "order": 1787329386771,
+  "item": {
+    "id": 464504,
+    "mediaType": "movie",
+    "title": "A Madea Family Funeral",
+    "year": "2019",
+    "overview": "A joyous family reunion becomes a hilarious nightmare as Madea and the crew travel to backwoods Georgia, where they find themselves unexpectedly planning a funeral that might unveil unpleasant family secrets.",
+    "posterPath": "/sFvOTUlZrIxCLdmz1fC16wK0lme.jpg",
+    "backdropPath": "/byHW1cN59Af7RFhSSbtz9kzMCc4.jpg",
+    "voteAverage": 5.961,
+    "genreIds": [
+      35
+    ],
+    "addedBy": "Sushi",
+    "addedAt": "2026-08-21T16:23:06.771Z"
+  }
+}
