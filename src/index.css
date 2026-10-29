@@ -463,7 +463,7 @@ code {
   grid-template-columns: repeat(3, 330px);
   gap: 14px;
   justify-content: center;
-  align-items: start;
+    align-items: stretch;
 }
 
 .list-column {
@@ -497,6 +497,7 @@ code {
 .list-zones {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 8px;
   padding: 10px;
   border-radius: 18px;
